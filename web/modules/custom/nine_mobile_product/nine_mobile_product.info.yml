@@ -1,0 +1,5 @@
+name: Nine Mobile Product
+type: module
+description: Custom display product and logic
+core: 8.x
+package: Custom

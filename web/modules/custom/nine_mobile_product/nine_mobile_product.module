@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @file
+ * Contains nine_mobile_product.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nine_mobile_product_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nine_mobile_product module.
+    case 'help.page.nine_mobile_product':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Custom display product and logic') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+

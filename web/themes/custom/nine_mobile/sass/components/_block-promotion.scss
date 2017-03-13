@@ -1,0 +1,51 @@
+// <div class="paragraph--promotion--2column paragraph paragraph--promotion">
+//   <h2 class="paragraph__title">Title Pragraph</h2>
+//   <div class="paragraph__content">
+//     <div class="paragraph--promotion__item">
+//       <img />
+//       <div class="paragraph--promotion__info">
+//         <h3>Promote 1</h3>
+//         <p>Description</p>
+//         <div class="paragraph--promotion__link"><a href="#">Link</a></div>
+//       </div>
+//     </div>
+//     <div class="paragraph--promotion__item">
+//       <img />
+//       <div class="paragraph--promotion__info">
+//         <h3>Promote 1</h3>
+//         <p>Description</p>
+//         <div class="paragraph--promotion__link"><a href="#">Link</a></div>
+//       </div>
+//     </div>
+//     <div class="paragraph--promotion__item">
+//       <img />
+//       <div class="paragraph--promotion__info">
+//         <h3>Promote 1</h3>
+//         <p>Description</p>
+//         <div class="paragraph--promotion__link"><a href="#">Link</a></div>
+//       </div>
+//     </div>
+//   </div>
+// </div>
+
+.block-promotion {
+  @extend .n-container;
+  &__item {
+    position: relative;
+    margin-bottom: 40px;
+  }
+  &__info {
+    position: absolute;
+    top: 10px;
+    left: 20px;
+  }
+}
+
+.block-promotion--2cols {
+  .block-promotion__item {
+    @include susy-media(tablet) {
+      @include gallery(2);
+    }
+  }
+}
+

@@ -1,0 +1,19 @@
+global-style:
+  version: VERSION
+  css:
+    theme:
+      stylesheets/style.css: {}
+global-js:
+  version: VERSION
+  js:
+    js/nine_mobile.js: {}
+slick-carousel:
+  version: VERSION
+  css:
+    theme:
+      bower_components/slick-carousel/slick/slick.css: {}
+      bower_components/slick-carousel/slick/slick-theme.css: {}
+  js:
+    bower_components/slick-carousel/slick/slick.min.js: {}
+  dependencies:
+    - core/jquery

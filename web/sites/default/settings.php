@@ -750,18 +750,7 @@ $settings['file_scan_ignore_directories'] = [
  * Keep this code block at the end of this file to take full effect.
  */
 #
-# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
-#   include $app_root . '/' . $site_path . '/settings.local.php';
-# }
-$databases['default']['default'] = array (
-  'database' => 'project_99mobile',
-  'username' => 'root',
-  'password' => '123',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-$settings['install_profile'] = 'commerce_base';
-$config_directories['sync'] = 'sites/default/files/config_lSdxlb6DPBI8Sdltul7lnM-QXXLnTSqmckOK9uBh5Jq3dcyACH7lhIFICOPB0Z2iVIVBWkCBOA/sync';
+if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+  include $app_root . '/' . $site_path . '/settings.local.php';
+}
+

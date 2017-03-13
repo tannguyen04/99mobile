@@ -1,0 +1,122 @@
+//Compass
+@import "compass";
+
+//Susy Grid
+@import "grids";
+
+//Bootstrap
+//@import "bootstrap-variables";
+@import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
+
+@import "components/block-carousel";
+@import "components/block-page-title";
+@import "components/block-promotion";
+
+@import "layout";
+
+$color: red;
+
+html {
+  font-size: 16px;
+}
+
+.site-footer {
+  @include background-image(linear-gradient($color, red));
+}
+.region-header-wrapper {
+  background-color: $color;
+}
+
+.site-footer__top {
+  .region {
+    @include susy-media(tabletOnly) {
+      @include span(4 of $susy-tablet);
+      &:nth-child(2n) {
+        @include last();
+      }
+    }
+    @include susy-media(desktop) {
+      @include span(3 of $susy-desktop);
+      &:last-of-type {
+        @include last();
+      }
+    }
+  }
+}
+
+.featured-top {
+  background-color: green;
+}
+.featured-bottom {
+  background-color: green;
+}
+
+
+// #sidebar-second {
+//   @include susy-media(tablet) {
+//     @include span(2 at 7 of $susy-tablet);
+//   }
+// }
+.layout-sidebar-first {
+  .main-content {
+    @include susy-media(tablet) {
+      @include span(6 at 3 of $susy-tablet);
+    }
+  }
+  #sidebar-first {
+    @include susy-media(tablet) {
+      @include span(2 of $susy-tablet);
+    }
+  }
+}
+.layout-sidebar-second {
+  .main-content {
+    @include susy-media(tablet) {
+      @include span(6 of $susy-tablet);
+    }
+  }
+  #sidebar-second {
+    @include susy-media(tablet) {
+      @include span(2 at 7 of $susy-tablet);
+    }
+  }
+}
+.layout-two-sidebars {
+  .main-content {
+    @include susy-media(tablet) {
+      @include span(4 at 3 of $susy-tablet isolate);
+    }
+  }
+  #sidebar-first {
+    @include susy-media(tablet) {
+      @include span(2 of $susy-tablet);
+    }
+  }
+  #sidebar-second {
+    @include susy-media(tablet) {
+      @include span(2 at 7 of $susy-tablet);
+    }
+  }
+}
+.layout-full {
+  .layout-main {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.paragraph {
+  &__title {
+    @extend .n-container;
+  }
+  &__content {
+    @extend .n-container;
+  }
+}
+

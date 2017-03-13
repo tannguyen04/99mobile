@@ -1,0 +1,6 @@
+.block-page-title {
+  background-color: green;
+  &__info {
+    @extend .n-container;
+  }
+}
