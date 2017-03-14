@@ -4,6 +4,10 @@
 //Susy Grid
 @import "grids";
 
+//Color
+@import "colors";
+
+
 //Bootstrap
 //@import "bootstrap-variables";
 @import "../bower_components/bootstrap-sass/assets/stylesheets/bootstrap";
@@ -14,17 +18,21 @@
 
 @import "layout";
 
-$color: red;
-
 html {
   font-size: 16px;
 }
 
 .site-footer {
-  @include background-image(linear-gradient($color, red));
+  @include background-image(linear-gradient(to bottom,$blue_dark 0,$blue_light 100%));
+  color: $white;
+
+  a {
+    color: $gray-e3;
+  }
 }
+
 .region-header-wrapper {
-  background-color: $color;
+  @include background-image(linear-gradient(to bottom,$blue_dark 0,$blue 100%));
 }
 
 .site-footer__top {
