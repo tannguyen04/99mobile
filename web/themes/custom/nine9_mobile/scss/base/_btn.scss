@@ -1,0 +1,110 @@
+// Button
+.btn {
+  @include bebas-neue-bold;
+  border-style: solid;
+  border-width: .1rem;
+  display: inline-block;
+  font-size: rem(20px);
+  font-weight: 400;
+  line-height: 1;
+  min-width: rem(100px);
+  outline: none;
+  padding: rem(16px 25px 12px);
+  text-align: center;
+  text-transform: uppercase;
+
+  &,
+  &:focus,
+  &:visited {
+    background-color: transparent;// Custom default style of browser button tag
+    border-color: $primary-color;
+    color: $primary-color;
+  }
+
+  &:active,
+  &:hover {
+    border-color: $gray-c4;
+    color: $gray-c4;
+  }
+
+  &--solid-orange {
+    &,
+    &:focus,
+    &:visited {
+      background-color: $primary-color;
+      color: $white;
+    }
+
+    &:active,
+    &:hover {
+      background-color: $gray-c4;
+      border-color: $gray-c4;
+      color: $white;
+    }
+  }
+
+  &--solid-blue {
+    &,
+    &:focus,
+    &:visited {
+      background-color: $blue;
+      border-color: $blue;
+      color: $white;
+    }
+
+    &:active,
+    &:hover {
+      background-color: $gray-c4;
+      border-color: $gray-c4;
+      color: $white;
+    }
+  }
+
+  &--outline-blue {
+    &,
+    &:focus,
+    &:visited {
+      border-color: $blue;
+      color: $blue;
+    }
+
+    &:active,
+    &:hover {
+      border-color: $gray-c4;
+      color: $gray-c4;
+    }
+  }
+
+
+  &--solid-teal {
+    &,
+    &:focus,
+    &:visited {
+      background-color: $teal;
+      border-color: $teal;
+      color: $white;
+    }
+
+    &:active,
+    &:hover {
+      background-color: $gray-c4;
+      border-color: $gray-c4;
+      color: $white;
+    }
+  }
+
+  &--outline-teal {
+    &,
+    &:focus,
+    &:visited {
+      border-color: $teal;
+      color: $teal;
+    }
+
+    &:active,
+    &:hover {
+      border-color: $gray-c4;
+      color: $gray-c4;
+    }
+  }
+}

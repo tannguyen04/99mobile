@@ -1,0 +1,9 @@
+global-style:
+  version: VERSION
+  css:
+    theme:
+      css/styles.css: {}
+global-js:
+  version: VERSION
+  js:
+    js/script.js: {}
