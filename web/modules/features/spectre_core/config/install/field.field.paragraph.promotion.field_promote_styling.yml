@@ -1,0 +1,22 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.paragraph.field_promote_styling
+    - paragraphs.paragraphs_type.promotion
+  module:
+    - options
+id: paragraph.promotion.field_promote_styling
+field_name: field_promote_styling
+entity_type: paragraph
+bundle: promotion
+label: Style
+description: ''
+required: true
+translatable: false
+default_value:
+  -
+    value: 2column
+default_value_callback: ''
+settings: {  }
+field_type: list_string

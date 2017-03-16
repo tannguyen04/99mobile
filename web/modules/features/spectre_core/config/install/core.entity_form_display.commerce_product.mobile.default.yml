@@ -1,0 +1,122 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.mobile
+    - field.field.commerce_product.mobile.body
+    - field.field.commerce_product.mobile.field_brand
+    - field.field.commerce_product.mobile.field_condition_availability
+    - field.field.commerce_product.mobile.field_description
+    - field.field.commerce_product.mobile.field_images
+    - field.field.commerce_product.mobile.field_operating_system
+    - field.field.commerce_product.mobile.field_paragraphs
+    - field.field.commerce_product.mobile.stores
+    - field.field.commerce_product.mobile.variations
+    - image.style.thumbnail
+  module:
+    - commerce
+    - image
+    - inline_entity_form
+    - paragraphs
+    - path
+    - text
+id: commerce_product.mobile.default
+targetEntityType: commerce_product
+bundle: mobile
+mode: default
+content:
+  body:
+    type: text_textarea_with_summary
+    weight: 2
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+  created:
+    type: datetime_timestamp
+    weight: 4
+    settings: {  }
+    third_party_settings: {  }
+  field_brand:
+    weight: 8
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_condition_availability:
+    weight: 10
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_description:
+    weight: 11
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_images:
+    weight: 5
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_operating_system:
+    weight: 9
+    settings: {  }
+    third_party_settings: {  }
+    type: options_buttons
+  field_paragraphs:
+    type: entity_reference_paragraphs
+    weight: 12
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: open
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: ''
+    third_party_settings: {  }
+  path:
+    type: path
+    weight: 7
+    settings: {  }
+    third_party_settings: {  }
+  stores:
+    type: commerce_entity_select
+    weight: 0
+    settings:
+      autocomplete_threshold: 7
+      autocomplete_size: 60
+      autocomplete_placeholder: ''
+    third_party_settings: {  }
+  title:
+    type: string_textfield
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  uid:
+    type: entity_reference_autocomplete
+    weight: 3
+    settings:
+      match_operator: CONTAINS
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+  variations:
+    type: inline_entity_form_complex
+    weight: 6
+    settings:
+      override_labels: true
+      label_singular: variation
+      label_plural: variations
+      form_mode: default
+      allow_new: true
+      allow_existing: false
+      match_operator: CONTAINS
+    third_party_settings: {  }
+hidden:
+  status: true

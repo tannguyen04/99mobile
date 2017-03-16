@@ -1,0 +1,9 @@
+langcode: en
+status: true
+dependencies: {  }
+id: tablet
+label: Tablet
+description: ''
+variationType: default
+injectVariationFields: true
+traits: {  }

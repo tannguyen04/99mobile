@@ -1,0 +1,48 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stack_item.field_description
+    - field.field.paragraph.stack_item.field_image
+    - field.field.paragraph.stack_item.field_position
+    - field.field.paragraph.stack_item.field_text
+    - image.style.thumbnail
+    - paragraphs.paragraphs_type.stack_item
+  module:
+    - image
+    - text
+id: paragraph.stack_item.default
+targetEntityType: paragraph
+bundle: stack_item
+mode: default
+content:
+  field_description:
+    weight: 1
+    settings:
+      rows: 5
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea
+  field_image:
+    weight: 0
+    settings:
+      progress_indicator: throbber
+      preview_image_style: thumbnail
+    third_party_settings: {  }
+    type: image_image
+  field_position:
+    weight: 3
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_text:
+    weight: 2
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true
