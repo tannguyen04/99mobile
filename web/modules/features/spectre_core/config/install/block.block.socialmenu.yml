@@ -6,9 +6,9 @@ dependencies:
   module:
     - system
   theme:
-    - nine9_mobile
+    - nine_mobile
 id: socialmenu
-theme: nine9_mobile
+theme: nine_mobile
 region: footer_third
 weight: -9
 provider: null
