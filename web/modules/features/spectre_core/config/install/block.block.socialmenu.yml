@@ -8,7 +8,7 @@ dependencies:
   theme:
     - nine_mobile
 id: socialmenu
-theme: nine_mobile
+theme: nine9_mobile
 region: footer_third
 weight: -9
 provider: null
