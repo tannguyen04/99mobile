@@ -120,20 +120,23 @@ function nine_mobile_preprocess_paragraph(&$variables) {
 function nine_mobile_preprocess_commerce_product(&$variables) {
   $product_entity = $variables['product_entity'];
   $field_paragraphs = $product_entity->get('field_paragraphs');
-  $number_rows = $field_paragraphs->count();
-  $field_paragraphs_view = $field_paragraphs->view();
-  $scrollspy_build = array(
-    '#theme' => 'item_list',
-  );
-  for ($i = 0; $i < $number_rows; $i++){
-    $paragraph = $field_paragraphs_view[$i]['#paragraph'];
-    $title = $paragraph->get('field_text')->first();
-    if (!empty($title)) {
-      $title = $title->getValue();
-      $title = $title['value'];
-      $scrollspy_build['#items'][] = array(
-        '#markup' => '<a href="#paragraph-item-'.$paragraph->id().'">' . $title . '</a>',
-      );
+  $scrollspy_build = array();
+  if (!empty($field_paragraphs) && $variables['elements']['#view_mode'] == 'full') {
+    $number_rows = $field_paragraphs->count();
+    $field_paragraphs_view = $field_paragraphs->view();
+    $scrollspy_build = array(
+      '#theme' => 'item_list',
+    );
+    for ($i = 0; $i < $number_rows; $i++){
+      $paragraph = $field_paragraphs_view[$i]['#paragraph'];
+      $title = $paragraph->get('field_text')->first();
+      if (!empty($title)) {
+        $title = $title->getValue();
+        $title = $title['value'];
+        $scrollspy_build['#items'][] = array(
+          '#markup' => '<a href="#paragraph-item-'.$paragraph->id().'">' . $title . '</a>',
+        );
+      }
     }
   }
   $variables['scrollspy_build'] = $scrollspy_build;
