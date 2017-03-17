@@ -122,8 +122,10 @@
 			border-color: transparent;
 			border-style: dotted;
 			border-width: 0px 1px;
-			
-			&:hover {
+		}
+
+		&:hover {
+			a {
 				background-color: $gray-f9;
 				border-color: $gray-d9;
 			}
