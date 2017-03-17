@@ -38,6 +38,10 @@
   font-family: "BebasNeue-Bold", Helvetica, Arial, sans-serif;
 }
 
+@mixin frutigerlt55 {
+  font-family: "Frutigerlt55", Helvetica, Arial, sans-serif;
+}
+
 //Single image background with retina support
 //USAGE:  @include background-image-retina('preloader', 'GIF', rem(20px), rem(20px));
 @mixin background-image-retina($image-1x, $image-2x, $width, $height) {

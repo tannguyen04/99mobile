@@ -1,0 +1,71 @@
+{% set logo = {
+  'src' : 'https://www.o2.co.uk/upgrade/static/759810cbfabfd8f4d4978d23bd0bb9a3a0f22423/branding/img/logo-o2.svg',
+  'href' : '#logo',
+  'title' : 'Home page'
+}
+%}
+{% set mainMenu = [
+  {
+    'title' : 'Shop',
+    'text' : 'Phones, tariffs, tablets, accessories',
+    'link' : '#',
+  },
+  {
+    'title' : 'More for you',
+    'text' : 'More perks, services, connected, flexibility ',
+    'link' : '#'
+  },
+  {
+    'title' : 'Connectivity',
+    'text' : 'Phones, tariffs, tablets, accessories',
+    'link' : '#'
+  },
+  {
+    'title' : 'Apps',
+    'text' : 'Phones, tariffs, tablets, accessories',
+    'link' : '#'
+  }
+]
+%}
+
+<div class="nav-primary">
+  <div class="content-inner">
+    <div class="nav-inner">
+      <div id="logo" class="logo">
+        <a href="{{ logo.href }}">
+          <img src="{{ logo.src }}" alt="{{ logo.title }}" />
+        </a>
+      </div>
+      <div id="main-menu">
+        <ul class="main-menu">
+        {% for item in mainMenu %}
+          <li class="has-submenu {% if loop.first %} {{ 'active' }} {% endif %}">
+            <a href="{{ item.link }}">
+              <dl>
+                <dt>{{ item.title }}</dt>
+                <dd>{{ item.text }}</dd>
+              </dl>
+            </a>
+              <ul class="sub-menu">
+              {% for i in 0..5 %}
+                {% if loop.first %}
+                  <li class="active"><a href="#">Active item {{ i }} </a></li>
+                {% else %}
+                  <li class="has-submenu">
+                    <a href="#">Sub item {{ i }} </a>
+                    <ul class="sub-menu">
+                    {% for j in 0..7 %}
+                        <li><a href="#">Sub of sub item {{ j }} </a></li>
+                    {% endfor %}
+                    </ul>
+                  </li>
+                {% endif %}
+              {% endfor %}
+              </ul>
+          </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

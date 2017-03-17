@@ -22,6 +22,10 @@
       "hidecode":true
     },
     {
+      "name":"nav-primary",
+      "group":"component"
+    },
+    {
       "name":"paragraphs",
       "group":"basic"
     },

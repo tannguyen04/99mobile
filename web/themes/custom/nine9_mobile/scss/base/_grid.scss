@@ -83,7 +83,7 @@ $susy-media: (
   desktop: em($desktop) * 1em,
 );
 
-
+%container,
 .container {
   @include container();
 
@@ -93,5 +93,18 @@ $susy-media: (
 
   @include susy-media(desktop) {
     @include container($susy-desktop);
+  }
+}
+
+.content-inner {
+  @extend %container;
+}
+
+// Reset container
+.layout-full {
+  .container {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0; 
   }
 }
