@@ -1,0 +1,36 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stack.field_paragraph
+    - field.field.paragraph.stack.field_text
+    - paragraphs.paragraphs_type.stack
+  module:
+    - paragraphs
+id: paragraph.stack.default
+targetEntityType: paragraph
+bundle: stack
+mode: default
+content:
+  field_paragraph:
+    weight: 0
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: stack_item
+    third_party_settings: {  }
+    type: entity_reference_paragraphs
+  field_text:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

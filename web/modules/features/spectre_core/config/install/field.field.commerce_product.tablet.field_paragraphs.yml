@@ -1,0 +1,70 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.tablet
+    - field.storage.commerce_product.field_paragraphs
+    - paragraphs.paragraphs_type.carousel
+    - paragraphs.paragraphs_type.page_title
+    - paragraphs.paragraphs_type.product_list
+    - paragraphs.paragraphs_type.product_promotion
+    - paragraphs.paragraphs_type.promotion
+    - paragraphs.paragraphs_type.stack
+    - paragraphs.paragraphs_type.stack_left_right
+    - paragraphs.paragraphs_type.wide_text
+  module:
+    - entity_reference_revisions
+id: commerce_product.tablet.field_paragraphs
+field_name: field_paragraphs
+entity_type: commerce_product
+bundle: tablet
+label: Paragraphs
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:paragraph'
+  handler_settings:
+    target_bundles:
+      carousel: carousel
+      page_title: page_title
+      product_list: product_list
+      product_promotion: product_promotion
+      promotion: promotion
+      stack: stack
+      stack_left_right: stack_left_right
+      wide_text: wide_text
+    target_bundles_drag_drop:
+      carousel:
+        enabled: true
+        weight: 11
+      page_title:
+        enabled: true
+        weight: 12
+      product_list:
+        enabled: true
+        weight: 13
+      product_promotion:
+        enabled: true
+        weight: 14
+      promotion:
+        enabled: true
+        weight: 15
+      slide:
+        weight: 16
+        enabled: false
+      stack:
+        enabled: true
+        weight: 17
+      stack_item:
+        weight: 18
+        enabled: false
+      stack_left_right:
+        enabled: true
+        weight: 19
+      wide_text:
+        enabled: true
+        weight: 20
+field_type: entity_reference_revisions

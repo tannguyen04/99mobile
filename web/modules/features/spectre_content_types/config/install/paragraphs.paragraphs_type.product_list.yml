@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: product_list
+label: 'Product List'
+behavior_plugins: {  }

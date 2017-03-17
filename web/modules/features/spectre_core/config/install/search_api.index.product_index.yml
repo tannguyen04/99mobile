@@ -1,0 +1,77 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.storage.commerce_product.field_brand
+    - field.storage.commerce_product.field_condition_availability
+    - field.storage.commerce_product.field_operating_system
+    - field.storage.commerce_product.variations
+    - field.storage.commerce_product_variation.attribute_color
+    - search_api.server.local
+  module:
+    - commerce_product
+    - search_api
+id: product_index
+name: 'Product Index'
+description: ''
+read_only: false
+field_settings:
+  field_brand:
+    label: Brand
+    datasource_id: 'entity:commerce_product'
+    property_path: field_brand
+    type: integer
+    dependencies:
+      config:
+        - field.storage.commerce_product.field_brand
+  field_condition_availability:
+    label: Condition/availability
+    datasource_id: 'entity:commerce_product'
+    property_path: field_condition_availability
+    type: integer
+    dependencies:
+      config:
+        - field.storage.commerce_product.field_condition_availability
+  field_operating_system:
+    label: 'Operating system'
+    datasource_id: 'entity:commerce_product'
+    property_path: field_operating_system
+    type: integer
+    dependencies:
+      config:
+        - field.storage.commerce_product.field_operating_system
+  type:
+    label: 'Product type'
+    datasource_id: 'entity:commerce_product'
+    property_path: type
+    type: string
+  color_name:
+    label: 'Variations » Product variation » Color » Product attribute value » Name'
+    datasource_id: 'entity:commerce_product'
+    property_path: 'variations:entity:attribute_color:entity:name'
+    type: string
+    dependencies:
+      config:
+        - field.storage.commerce_product.variations
+        - field.storage.commerce_product_variation.attribute_color
+      module:
+        - commerce_product
+        - commerce_product
+datasource_settings:
+  'entity:commerce_product':
+    bundles:
+      default: true
+      selected: {  }
+    languages:
+      default: true
+      selected: {  }
+processor_settings:
+  add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
+tracker_settings:
+  default: {  }
+options:
+  index_directly: true
+  cron_limit: 50
+server: local

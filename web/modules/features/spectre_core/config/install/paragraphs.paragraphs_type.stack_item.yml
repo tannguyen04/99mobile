@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: stack_item
+label: 'Stack Item'
+behavior_plugins: {  }
