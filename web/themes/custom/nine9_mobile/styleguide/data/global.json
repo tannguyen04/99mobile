@@ -44,6 +44,10 @@
     {
       "name":"button",
       "group":"helper"
+    },
+    {
+      "name":"page-title",
+      "group":"component"
     }
   ]
 }
