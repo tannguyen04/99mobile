@@ -1,0 +1,36 @@
+<?php
+
+/**
+ * @file
+ * Contains libre8_mautic.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function libre8_mautic_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the libre8_mautic module.
+    case 'help.page.libre8_mautic':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('My Awesome Module') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_theme().
+ */
+function libre8_mautic_theme() {
+  return [
+    'libre8_mautic' => [
+      'template' => 'libre8_mautic',
+      'render element' => 'children',
+    ],
+  ];
+}

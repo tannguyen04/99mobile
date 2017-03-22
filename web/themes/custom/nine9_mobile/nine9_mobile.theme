@@ -153,6 +153,21 @@ function nine9_mobile_preprocess_views_view_field(&$variables) {
 }
 
 
+function nine9_mobile_preprocess_menu(&$variables) {
+  if ($variables['menu_name'] == 'main') {
+    foreach ($variables['items'] as $key => &$value) {
+      //$value['title'] = '<strong>Hay</strong>';
 
+    }
 
+  }
+}
+
+function nine9_mobile_process_menu(&$variables) {
+
+  if ($variables['menu_name'] == 'main') {
+    kint($variables);
+  die;
+  }
+}
 

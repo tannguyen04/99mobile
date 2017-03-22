@@ -1,0 +1,8 @@
+
+libre8_mautic.libre8_mautic_create_user_hello:
+  path: '/libre8_mautic/create/user'
+  defaults:
+    _controller: '\Drupal\libre8_mautic\Controller\Libre8MauticCreateUser::CreateUser'
+    _title: 'Libre8 Mautic'
+  requirements:
+    _access: 'TRUE'

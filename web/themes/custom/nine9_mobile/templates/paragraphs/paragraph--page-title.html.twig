@@ -38,16 +38,9 @@
  * @ingroup themeable
  */
 #}
-{%
-  set classes = [
-    'paragraph block-page-title',
-    'paragraph--type--' ~ paragraph.bundle|clean_class,
-    view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-  ]
-%}
 {% block paragraph %}
-  <div{{ attributes.addClass(classes) }}>
-    <div class="block-page-title__info">
+  <div class="page-title">
+    <div class="content-inner page-title-inner">
       {% block content %}
         {{ content.field_text }}
         {{ content.field_sub_title }}
