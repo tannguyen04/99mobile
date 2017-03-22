@@ -1,0 +1,14 @@
+{
+  "name": "drupal/spectre_mautic",
+  "type": "drupal-module",
+  "description": "Integrated Mautic Open Source",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/spectre_mautic",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/spectre_mautic",
+    "source": "http://cgit.drupalcode.org/spectre_mautic"
+  },
+  "require": { }
+}

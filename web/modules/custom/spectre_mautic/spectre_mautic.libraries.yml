@@ -1,0 +1,4 @@
+mautic-tracking-js:
+  version: VERSION
+  js:
+    js/mautic-tracking.js: {}

@@ -1,0 +1,78 @@
+<?php
+
+/**
+ * @file
+ * Contains spectre_mautic.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Mautic\MauticApi;
+use Mautic\Auth\ApiAuth;
+
+/**
+ * Implements hook_help().
+ */
+function spectre_mautic_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the spectre_mautic module.
+    case 'help.page.spectre_mautic':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Integrated Mautic Open Source') . '</p>';
+      return $output;
+
+    default:
+  }
+}
+
+/**
+ * Implements hook_entity_insert()
+ */
+function spectre_mautic_entity_insert(Drupal\Core\Entity\EntityInterface $entity) {
+  if ($entity->getEntityTypeId() == 'user') {
+    $settings = array(
+      'userName'   => 'admin',
+      'password'   => 'admin@123'
+    );
+    $initAuth = new ApiAuth();
+    $auth = $initAuth->newAuth($settings, 'BasicAuth');
+    $apiUrl     = "http://mautic.ffwvn.com";
+    $api        = new MauticApi();
+    $contactApi = $api->newApi("contacts", $auth, $apiUrl);
+
+    $first_name = $entity->getDisplayName();
+    $email = $entity->getEmail();
+
+    $data = array(
+      'firstname' => $first_name,
+      'email'     => $email,
+      'ipAddress' => $_SERVER['REMOTE_ADDR'],
+    );
+    // if (isset($_COOKIE['mtc_sid'])) {
+    //   $data['mtc_sid'] = $_COOKIE['mtc_sid'];
+    // }
+    // if (isset($_COOKIE['mtc_id'])) {
+    //   $data['mtc_id'] = $_COOKIE['mtc_id'];
+    //   $createIfNotFound = true;
+    //   $contact = $contactApi->edit($_COOKIE['mtc_id'], $data, $createIfNotFound);
+    // }else {
+    //   $contact = $contactApi->create($data);
+    // }
+    $contact = $contactApi->create($data);
+    if (isset($contact['contact']['id'])) {
+      $campaignApi = $api->newApi("campaigns", $auth, $apiUrl);
+      $response = $campaignApi->addContact(9 , $contact['contact']['id']);
+      if (!isset($response['success'])) {
+        drupal_set_message(t('Add to Welcome campaign'), 'status');
+      }
+    }
+
+  }
+}
+
+/**
+ * Implements hook_page_attachments_alter();
+ */
+function spectre_mautic_page_attachments_alter(&$page) {
+  $page['#attached']['library'][] = 'spectre_mautic/mautic-tracking-js';
+}
