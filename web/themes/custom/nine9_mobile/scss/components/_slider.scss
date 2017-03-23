@@ -1,0 +1,79 @@
+.slider {
+
+	h2,
+	p:not(.cta) {
+		color: $blue_slider;
+	}
+
+	h2 {
+	  @media (min-width: $tablet) {
+			font-size: 2.875rem;
+	  }
+	}
+
+	img {
+		width: 100%;
+		height: auto;
+	}
+
+	.cta {
+		padding-left: 30px;
+		background: url(../images/promo-cta-arrow.png) no-repeat top left transparent;
+		display: inline-block;
+	}
+
+	.slick-arrow {
+		position: absolute;
+		z-index: 3;
+		top: 50%;
+		width: 39px;
+		height: 39px;
+		font-size: 0;
+		left: 10px;
+		margin-top: -18px;
+		background: url(../images/carousel-prev.png) no-repeat center center rgba(0,0,0,0.5);
+		padding: 0;
+		min-width: auto;
+		cursor: pointer;
+		border: none;
+
+		&.slick-next {
+			background-image: url(../images/carousel-next.png);
+			left: auto;
+			right: 10px;
+		}
+	}
+
+	&--item {
+		position: relative;
+		z-index: 1;
+	}
+
+	&--content {
+		position: absolute;
+		width: 80%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		top: 50%;
+		z-index: 2;
+		text-align: center;
+
+	  @media (min-width: $tablet) {
+			width: 60%;
+	
+			&.align-left {
+				left: 15%;
+				width: 40%;
+				text-align: left;
+				transform: translate(0, -50%);
+			}
+
+			&.align-right {
+				left: 50%;
+				width: 40%;
+				text-align: left;
+				transform: translate(0, -50%);
+			}
+		}
+	}
+}

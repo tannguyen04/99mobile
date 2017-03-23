@@ -7,4 +7,9 @@
     tablet = "(min-width:48em)"; // 768px.
   // Add  functionality here.
 
+  $(document).ready(function(){
+    $('.slider').slick({
+    });
+  });
+
 }(this, this.document, this.jQuery));

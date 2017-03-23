@@ -48,6 +48,10 @@
     {
       "name":"page-title",
       "group":"component"
+    },
+    {
+      "name":"slider",
+      "group":"component"
     }
   ]
 }

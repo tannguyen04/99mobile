@@ -4,7 +4,8 @@
   "license": "MIT",
   "dependencies": {
     "susy": "~2.2.6",
-    "bower.json": "~0.6.9"
+    "bower.json": "~0.6.9",
+    "slick-carousel": "^1.6.0"
   },
   "ignore": [
     "**/.*",
@@ -12,5 +13,8 @@
     "bower_components",
     "test",
     "tests"
-  ]
+  ],
+  "install": {
+    "path": "../vendor"
+  }
 }

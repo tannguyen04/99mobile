@@ -1,0 +1,44 @@
+{% set slider = [
+	{
+		"image": "https://unsplash.it/1202/300/?random",
+		"heading": "Save £20 on the Fitbit Alta",
+		"text": "Already on O2? Get £20 off the Fitbit Alta, when you buy it through Priority. Ends 29 March.",
+		"cta": "More about it",
+		"link": "http://google.com",
+		"align": "center",
+	},
+	{
+		"image": "https://unsplash.it/1200/300/?random0",
+		"heading": "Save £20 on the Fitbit Alta",
+		"text": "Already on O2? Get £20 off the Fitbit Alta, when you buy it through Priority. Ends 29 March.",
+		"cta": "More about it",
+		"link": "http://google.com",
+		"align": "right",
+	},
+	{
+		"image": "https://unsplash.it/1201/300/?random",
+		"heading": "Save £20 on the Fitbit Alta",
+		"text": "Already on O2? Get £20 off the Fitbit Alta, when you buy it through Priority. Ends 29 March.",
+		"cta": "More about it",
+		"link": "http://google.com",
+		"align": "left",
+	}
+]
+%}
+
+<div class="slider">
+	{% for item in slider %}
+		<div class="slider--item">
+			<a href="{{ item.link }}" title="{{ item.title }}">
+				<img src="{{ item.image }}" alt="{{ item.title }}">
+				<div class="content-inner">
+					<div class="slider--content align-{{ item.align }}">
+						<h2>{{ item.heading }}</h2>
+						<p>{{ item.text }}</p>
+						<p class="cta">{{ item.cta }}</p>
+					</div>
+				</div>
+			</a>
+		</div>
+	{% endfor %}
+</div>
