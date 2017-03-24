@@ -22,6 +22,20 @@
 		display: inline-block;
 	}
 
+	h2,
+	p,
+	.cta {
+		display: none;
+
+	  @media (min-width: $tablet) {
+			display: block;
+	  }
+	}
+
+	.content-inner {
+		position: relative;
+	}
+
 	.slick-arrow {
 		position: absolute;
 		z-index: 3;
