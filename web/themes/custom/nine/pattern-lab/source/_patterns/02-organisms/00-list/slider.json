@@ -1,0 +1,46 @@
+{
+  "slider": {
+    "title": "Slick Slider",
+    "items": [
+      {
+        "include()": {
+          "pattern": "molecules-slider-item",
+          "with": {
+            "image": "https://unsplash.it/1201/300/?random",
+            "heading": "Save £20 on the Fitbit Alta",
+            "text": "Already on O2? Get £20 off the Fitbit Alta, when you buy it through Priority. Ends 29 March.",
+            "cta": "More about it",
+            "link": "http://google.com",
+            "align": "center"
+          }
+        }
+      },
+      {
+        "include()": {
+          "pattern": "molecules-slider-item",
+          "with": {
+            "image": "https://unsplash.it/1202/300/?random",
+            "heading": "Save £30 on the Fitbit Alta",
+            "text": "Already on O3? Get £20 off the Fitbit Alta, when you buy it through Priority. Ends 29 March.",
+            "cta": "More about it",
+            "link": "http://google.com",
+            "align": "left"
+          }
+        }
+      },
+      {
+        "include()": {
+          "pattern": "molecules-slider-item",
+          "with": {
+            "image": "https://unsplash.it/1203/300/?random",
+            "heading": "Save £40 on the Fitbit Alta",
+            "text": "Already on O4? Get £20 off the Fitbit Alta, when you buy it through Priority. Ends 29 March.",
+            "cta": "More about it",
+            "link": "http://google.com",
+            "align": "right"
+          }
+        }
+      }
+    ]
+  }
+}

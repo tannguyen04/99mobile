@@ -1,0 +1,31 @@
+{
+  "component_A_3": {
+    "title": "Component A 3",
+    "items": [
+      {
+        "include()": {
+          "pattern": "molecules-component-A-1",
+          "with": {
+            "component_A_1": {
+              "title": "Component A 3 item 1",
+              "body": "<p>This is body</p>"
+            }
+          },
+          "only": true
+        }
+      },
+      {
+        "include()": {
+          "pattern": "molecules-component-A-1",
+          "with": {
+            "component_A_1": {
+              "title": "Component A 3 item 2",
+              "body": "<p>This is body</p>"
+            }
+          },
+          "only": true
+        }
+      }
+    ]
+  }
+}

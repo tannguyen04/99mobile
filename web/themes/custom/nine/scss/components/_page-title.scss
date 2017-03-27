@@ -1,0 +1,18 @@
+.page-title {
+	background: url(../images/page-title.png) no-repeat top right $blue_light;
+	background-size: auto 100%;
+	color: $white;
+
+	&-inner {
+		padding: 28px 30px 20px;
+	}
+
+	h1 {
+		font-size: rem(46px);
+	}
+
+	p {
+		font-style: italic;
+		font-size: rem(18px);
+	}
+}

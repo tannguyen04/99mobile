@@ -1,0 +1,23 @@
+// Button
+.btn {
+  background-color: transparent;// Custom default style of browser button tag
+  border-color: $primary-color;
+  border-style: solid;
+  border-width: rem(1px);
+  color: $primary-color;
+  display: inline-block;
+  font-size: rem(20px);
+  font-weight: 400;
+  line-height: 1;
+  min-width: rem(100px);
+  outline: none;
+  padding: rem(16px 25px 12px);
+  text-align: center;
+  text-transform: uppercase;
+
+  &:active,
+  &:hover {
+    border-color: $silver;
+    color: $silver;
+  }
+}

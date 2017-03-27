@@ -1,0 +1,173 @@
+<?php
+
+/**
+ * Implements hook_preprocess_HOOK() for node.html.twig.
+ */
+function nine_preprocess_node(&$variables) {
+}
+
+function nine_preprocess_field(&$variables, $hook) {
+  $element = $variables['element'];
+  //Alter field image in Pragraph "Product List"
+  if ($element['#field_name'] == 'field_image' && $element['#bundle'] == 'product_list') {
+    $object = $element['#object'];
+    $field_link = $object->get('field_link')->get(0);
+    if (!empty($field_link)) {
+      $url = $field_link->getUrl();
+      $variables['items'][0]['content']['#url'] = $url;
+    }
+  }
+  if ($element['#field_name'] == 'field_product_ref' && $element['#bundle'] == 'product_list') {
+    $object = $element['#object'];
+    $field_link = $object->get('field_link')->get(0);
+    if (!empty($field_link)) {
+      $link = $field_link->view();
+      $link['#options']['attributes']['class'][] = 'more-link';
+      $image = $object->get('field_image')->first();
+      $image = array(
+        '#item' => $image,
+        '#theme' => 'image_formatter',
+        '#image_style' => 'medium',
+      );
+      $variables['item_addition'] = array(
+        'wrap' => array(
+          '#theme_wrappers' => array('container'),
+          '#attributes' => array(
+            'class' => array(
+              'paragraph--product-list__item paragraph--product-list__item--addition'
+            ),
+          ),
+          'image' => $image,
+          'read_more' => $link,
+        ),
+      );
+    }
+  }
+}
+
+/**
+ * Implements hook_preprocess_HOOK() for HTML document templates.
+ *
+ * Adds body classes if certain regions have content.
+ */
+function nine_preprocess_html(&$variables) {
+  // Add information about the number of sidebars.
+  if (!empty($variables['page']['sidebar_first']) && !empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-two-sidebars';
+  }
+  elseif (!empty($variables['page']['sidebar_first'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-first';
+  }
+  elseif (!empty($variables['page']['sidebar_second'])) {
+    $variables['attributes']['class'][] = 'layout-one-sidebar';
+    $variables['attributes']['class'][] = 'layout-sidebar-second';
+  }
+  else {
+    $variables['attributes']['class'][] = 'layout-no-sidebars';
+  }
+
+  if (!empty($variables['page']['featured_top'])) {
+    $variables['attributes']['class'][] = 'has-featured-top';
+  }
+  // Admore about layout
+  if (isset($variables['node_type']) && $variables['node_type'] == 'landing_page') {
+    $variables['attributes']['class'][] = 'layout-full';
+  }
+}
+
+/**
+ * Implements hook_preprocess_paragraph()
+ */
+function nine_preprocess_paragraph(&$variables) {
+  $paragraph = $variables['paragraph'];
+  $variables['attributes']['data-id'] = 'paragraph-item-'.$paragraph->id();
+  if ($paragraph->bundle() == 'promotion') {
+    $modified = $paragraph->get('field_promote_styling');
+    $modified = $modified->first()->getValue();
+    if (!empty($modified['value']) && $modified['value'] != '1column') {
+      $variables['attributes']['class'][] = 'paragraph--'. str_replace('_', '-', $paragraph->bundle()) . '--'. $modified['value'];
+    }
+  }
+  if ($paragraph->bundle() == 'product_list') {
+    $modified = $paragraph->get('field_product_list_style');
+    $modified = $modified->first();
+    if (!empty($modified)) {
+      $modified = $modified->getValue();
+      $variables['attributes']['class'][] = 'paragraph--'. str_replace('_', '-', $paragraph->bundle()). '--'. $modified['value'];
+    }
+  }
+  if ($paragraph->bundle() == 'stack_item') {
+    $modified = $paragraph->get('field_position');
+    $modified = $modified->first();
+    if (!empty($modified)) {
+      $modified = $modified->getValue();
+      $variables['attributes']['class'][] = 'paragraph--'. str_replace('_', '-', $paragraph->bundle()). '--'. $modified['value'];
+    }
+  }
+}
+
+/**
+ * Prepares variables for product templates.
+ *
+ * Default template: commerce-product.html.twig.
+ *
+ * @param array $variables
+ *   An associative array containing:
+ *   - elements: An associative array containing rendered fields.
+ *   - attributes: HTML attributes for the containing element.
+ */
+function nine_preprocess_commerce_product(&$variables) {
+  $product_entity = $variables['product_entity'];
+  $field_paragraphs = $product_entity->get('field_paragraphs');
+  $number_rows = $field_paragraphs->count();
+  $field_paragraphs_view = $field_paragraphs->view();
+  $scrollspy_build = array(
+    '#theme' => 'item_list',
+  );
+  for ($i = 0; $i < $number_rows; $i++){
+    $paragraph = $field_paragraphs_view[$i]['#paragraph'];
+    $title = $paragraph->get('field_text')->first();
+    if (!empty($title)) {
+      $title = $title->getValue();
+      $title = $title['value'];
+      $scrollspy_build['#items'][] = array(
+        '#markup' => '<a href="#paragraph-item-'.$paragraph->id().'">' . $title . '</a>',
+      );
+    }
+  }
+  $variables['scrollspy_build'] = $scrollspy_build;
+}
+
+function nine_preprocess_views_view_field(&$variables) {
+  $view = $variables['view'];
+  if ($view->id() == 'news' && $view->current_display == 'block_1') {
+    $row = $variables['row'];
+    if ($row->index == 0 && $variables['field']->field == 'field_image') {
+      $variables['field']->options['settings']['image_style'] = 'medium';
+    }else {
+      $variables['field']->options['settings']['image_style'] = 'news_teaser';
+    }
+  }
+  $variables['output'] = $variables['field']->advancedRender($variables['row']);
+}
+
+
+function nine_preprocess_menu(&$variables) {
+  if ($variables['menu_name'] == 'main') {
+    foreach ($variables['items'] as $key => &$value) {
+      //$value['title'] = '<strong>Hay</strong>';
+
+    }
+
+  }
+}
+
+function nine_process_menu(&$variables) {
+
+  if ($variables['menu_name'] == 'main') {
+    kint($variables);
+  die;
+  }
+}
+
