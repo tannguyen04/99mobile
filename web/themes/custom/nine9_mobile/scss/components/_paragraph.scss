@@ -1,0 +1,24 @@
+.paragraph {
+	&__title {
+		position: relative;
+		background: url("../images/paragraph_shadow.png") no-repeat scroll 0 0 transparent;
+		padding: rem(16px 30px);
+    color: $blue_slider;
+    font-size: 1.25em;
+    line-height: 1.25em;
+
+		&:after {
+			position: absolute;
+			bottom: 1px;
+			left: 0;
+			right: 0;
+			content: "";
+			height: 3px;
+			background: url('../images/paragraph_line.png') no-repeat scroll 0 0 transparent;
+		}
+	}
+
+	&__content {
+		padding: rem(16px 30px);
+	}
+}
