@@ -6,7 +6,7 @@
 	}
 
 	&__heading {
-	  @media (min-width: $tablet) {
+		@include susy-media(tablet) {
 			font-size: 2.875rem;
 	  }
 	}
@@ -22,7 +22,7 @@
 		background: url(../images/promo-cta-arrow.png) no-repeat top left transparent;
 		display: none;
 
-	  @media (min-width: $tablet) {
+		@include susy-media(tablet) {
 			display: inline-block;
 	  }
 	}
@@ -31,7 +31,7 @@
 	&__text {
 		display: none;
 
-	  @media (min-width: $tablet) {
+		@include susy-media(tablet) {
 			display: block;
 	  }
 	}
@@ -76,7 +76,7 @@
 		z-index: 2;
 		text-align: center;
 
-	  @media (min-width: $tablet) {
+		@include susy-media(tablet) {
 			width: 60%;
 	
 			&.align-left {
