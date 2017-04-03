@@ -56,6 +56,10 @@
     {
       "name":"paragraph",
       "group":"component"
+    },
+    {
+      "name":"promote",
+      "group":"component"
     }
   ]
 }

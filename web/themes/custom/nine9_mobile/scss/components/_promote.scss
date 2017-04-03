@@ -1,0 +1,37 @@
+.promote {
+	&__item {
+		position: relative;
+		background-position: 100% 0;
+		background-size: auto 100%;
+		background-repeat: no-repeat;
+		background-color: $gray-ef;
+	}
+
+	&__content {
+		padding: rem(30px 0 60px 30px);
+		width: 60%;
+	}
+
+	&__heading {
+		font-size: 1.75rem;
+	}
+
+	&__text {
+		font-size: 0.875rem;
+	}
+
+	&__cta {
+		position: absolute;
+		left: 30px;
+		bottom: 10px;
+		z-index: 2;
+	}
+}
+
+.size-lager {
+	.promote {
+		&__content {
+			padding: rem(30px 0 160px 30px);
+		}
+	}
+}

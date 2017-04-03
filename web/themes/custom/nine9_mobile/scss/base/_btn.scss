@@ -107,4 +107,10 @@
       color: $gray-c4;
     }
   }
+
+  &--cta {
+    padding-left: 30px;
+    background: url(../images/promo-cta-arrow.png) no-repeat top left transparent;
+    display: inline-block;
+  }
 }
