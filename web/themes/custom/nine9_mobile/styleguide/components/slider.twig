@@ -30,7 +30,7 @@
 	{% for item in slider %}
 		<div class="slider__item">
 			<a class="slider__link" href="{{ item.link }}" title="{{ item.title }}">
-				<img class="slider__image" src="{{ item.image }}" alt="{{ item.title }}">
+				<div class="slider__image"><img src="{{ item.image }}" alt="{{ item.title }}"></div>
 				<div class="slider__content align-{{ item.align }}">
 					<h2 class="slider__heading">{{ item.heading }}</h2>
 					<p class="slider__text">{{ item.text }}</p>

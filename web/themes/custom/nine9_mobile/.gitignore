@@ -46,6 +46,8 @@ logs
 .npm/node_modules
 .npm/bower_components/
 
+.sass-cache
+
 # Ignore SASS source maps
 *.css.map
 
