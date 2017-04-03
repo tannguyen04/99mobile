@@ -4,20 +4,36 @@
 		background-position: 100% 0;
 		background-size: auto 100%;
 		background-repeat: no-repeat;
-		background-color: $gray-ef;
+
+		&:before {
+			content: "";
+			background-color: $gray-ef;
+			left: 0;
+			right: 0;
+			top: 0;
+			bottom: 0;
+			z-index: -1;
+			position: absolute;
+		}
+
+		&:hover:before {
+			opacity: 0.7;
+		}
 	}
 
 	&__content {
-		padding: rem(30px 0 60px 30px);
+		padding: rem(30px 0 160px 30px);
 		width: 60%;
 	}
 
 	&__heading {
 		font-size: 1.75rem;
+		color: $blue_slider;
 	}
 
 	&__text {
 		font-size: 0.875rem;
+		color: $blue_slider;
 	}
 
 	&__cta {
@@ -25,13 +41,65 @@
 		left: 30px;
 		bottom: 10px;
 		z-index: 2;
+		color: $blue_light;
 	}
 }
 
-.size-lager {
+.size-smaller {
 	.promote {
 		&__content {
-			padding: rem(30px 0 160px 30px);
+			padding: rem(30px 0 60px 30px);
+		}
+
+		&__cta {
+			padding-left: 25px;
+			background-position: 0 -32px;
+		}
+	}
+}
+
+.bg-white {
+	.promote {
+		&__item {
+			&:before {
+				background-color: $white;
+			}
+		}
+	}
+}
+.bg-blue {
+	.promote {
+		&__item {
+			&:before {
+				background: url("../images/bg-gradient.png") repeat-x;
+				background-size: auto 100%;
+			}
+		}
+
+		&__heading {
+			font-size: 1.75rem;
+			color: $white;
+		}
+
+		&__text {
+			font-size: 0.875rem;
+			color: $white;
+		}
+
+		&__cta {
+			background-position: 0 -60px;
+			color: $white;
+		}
+	}
+
+	&.size-smaller {
+		.promote {
+			&__item {
+			}
+
+			&__cta {
+				background-position: 0 -92px;
+			}
 		}
 	}
 }
