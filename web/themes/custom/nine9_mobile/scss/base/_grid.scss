@@ -108,3 +108,43 @@ $susy-media: (
     margin-right: 0; 
   }
 }
+
+.grid__item { 
+  @include susy-media(tablet) {
+    float: left;
+    padding: 10px;
+  }
+}
+
+
+.grid {
+  &--3column {
+    .grid {
+      &__item {
+        @include susy-media(tablet) {
+          padding: 0;
+        }
+      }
+    }
+  }
+
+  &--6column {
+    .grid {
+      &__item {
+        padding: 10px;
+        width: 50%;
+        float: left;
+      }
+    }
+  }
+}
+
+@for $i from 1 through 6 {
+  .grid--#{$i}column {
+    .grid__item {
+      @include susy-media(tablet) {
+        width: 100%/$i;
+      }
+    }
+  }
+}

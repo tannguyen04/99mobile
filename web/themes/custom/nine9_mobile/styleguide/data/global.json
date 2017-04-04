@@ -60,6 +60,10 @@
     {
       "name":"promote",
       "group":"component"
+    },
+    {
+      "name":"product-list",
+      "group":"component"
     }
   ]
 }

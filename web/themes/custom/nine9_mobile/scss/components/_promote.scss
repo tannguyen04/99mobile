@@ -102,32 +102,3 @@
 	}
 }
 
-.grid {
-	&--2column {
-		.grid {
-			&__item {
-				@include susy-media(tablet) {
-					width: 50%;
-					float: left;
-					padding: 10px;
-				}
-			}
-		}
-	}
-
-	&--3column {
-		.grid {
-			&__item {
-				@include susy-media(tablet) {
-					width: 33.33%;
-					float: left;
-				}
-			}
-
-			&__content {
-				padding: rem(30px 30px 60px 30px);
-				width: 100%;
-			}
-		}
-	}
-}
