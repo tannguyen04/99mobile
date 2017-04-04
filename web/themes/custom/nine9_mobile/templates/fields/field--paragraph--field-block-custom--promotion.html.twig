@@ -39,12 +39,15 @@
 #}
 
 {% for item in items %}
-  <div class="paragraph--promotion__item">
-    {{ item.content.field_image }}
-    <div class="paragraph--promotion__info">
-      {{ item.content.field_text }}
-      {{ item.content.field_desciption }}
-      {{ item.content.field_link }}
+  <div class="grid__item">
+    <div class="promote__item {{ item.content.field_background_color[0]['#markup'] }}" style="background-image:url('{{ item.content.background }}')">
+      <a class="promote__link" href="{{ item.content.field_link[0]['#url'].toString }}">
+        <div class="promote__content">
+          {{ item.content.field_text }}
+          <div class="promote__text">{{ item.content.field_desciption }}</div>
+          <p class="promote__cta btn--cta">{{ item.content.field_link[0]['#title'] }}</p>
+        </div>
+      </a>
     </div>
   </div>
 {% endfor %}

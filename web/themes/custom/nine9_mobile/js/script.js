@@ -1,10 +1,5 @@
 /*jslint browser: true*/
 /*global $, jQuery, Modernizr, enquire*/
-(function (window, document, $) {
-
-
-}(this, this.document, this.jQuery));
-
 (function ($, Drupal, drupalSettings) {
 
   'use strict';

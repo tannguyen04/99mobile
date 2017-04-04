@@ -48,16 +48,18 @@
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block title %}
-      {% if content.field_text %}
-        <h2 class="paragraph__title">{{ content.field_text }}</h2>
-      {% endif %}
-    {% endblock %}
+    <div class="content-inner">
+      {% block title %}
+        {% if content.field_text %}
+          <h2 class="paragraph__title">{{ content.field_text }}</h2>
+        {% endif %}
+      {% endblock %}
 
-    {% block content %}
-      <div class="paragraph__content">
-        {{ content|without('field_text') }}
-      </div>
-    {% endblock %}
+      {% block content %}
+        <div class="paragraph__content">
+          {{ content|without('field_text') }}
+        </div>
+      {% endblock %}
+    </div>
   </div>
 {% endblock paragraph %}

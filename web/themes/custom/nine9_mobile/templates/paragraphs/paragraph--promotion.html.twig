@@ -44,20 +44,24 @@
     'paragraph--' ~ paragraph.bundle|clean_class,
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
+    'paragraph--promote',
+    'size-smaller',
   ]
 %}
 {% block paragraph %}
   <div{{ attributes.addClass(classes) }}>
-    {% block title %}
-      {% if content.field_text %}
-        <h2 class="paragraph__title">{{ content.field_text }}</h2>
-      {% endif %}
-    {% endblock %}
+    <div class="content-inner">
+      {% block title %}
+        {% if content.field_text %}
+          <h2 class="paragraph__title">{{ content.field_text }}</h2>
+        {% endif %}
+      {% endblock %}
 
-    {% block content %}
-      <div class="paragraph__content">
-        {{ content.field_block_custom }}
-      </div>
-    {% endblock %}
+      {% block content %}
+        <div class="paragraph__content">
+          {{ content.field_block_custom }}
+        </div>
+      {% endblock %}
+    </div>
   </div>
 {% endblock paragraph %}

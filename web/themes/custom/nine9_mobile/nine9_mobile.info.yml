@@ -6,9 +6,9 @@ core: 8.x
 base theme: classy
 
 libraries:
-  - nine9_mobile/slick-carousel
   - nine9_mobile/global-style
   - nine9_mobile/global-js
+  - nine9_mobile/slick-carousel
 
 
 regions:
