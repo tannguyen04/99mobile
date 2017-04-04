@@ -1,0 +1,13 @@
+langcode: en
+status: true
+dependencies: {  }
+name: slide_desktop
+label: 'Slide Desktop'
+effects:
+  0f98c544-4f80-4611-ba04-c9d5be7b9f54:
+    uuid: 0f98c544-4f80-4611-ba04-c9d5be7b9f54
+    id: image_scale_and_crop
+    weight: 1
+    data:
+      width: 1200
+      height: 300

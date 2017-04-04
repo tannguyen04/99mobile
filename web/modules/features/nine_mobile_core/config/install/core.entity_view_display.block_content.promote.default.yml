@@ -1,0 +1,60 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promote
+    - field.field.block_content.promote.field_background_color
+    - field.field.block_content.promote.field_desciption
+    - field.field.block_content.promote.field_image
+    - field.field.block_content.promote.field_link
+    - field.field.block_content.promote.field_text
+    - image.style.medium
+  module:
+    - image
+    - link
+    - options
+    - text
+id: block_content.promote.default
+targetEntityType: block_content
+bundle: promote
+mode: default
+content:
+  field_background_color:
+    weight: 5
+    label: inline
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
+  field_desciption:
+    weight: 4
+    label: hidden
+    settings: {  }
+    third_party_settings: {  }
+    type: text_default
+  field_image:
+    weight: 2
+    label: hidden
+    settings:
+      image_style: medium
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+  field_link:
+    weight: 3
+    label: hidden
+    settings:
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
+    third_party_settings: {  }
+    type: link
+  field_text:
+    weight: 1
+    label: hidden
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
+hidden: {  }

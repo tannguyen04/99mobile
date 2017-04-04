@@ -5,12 +5,14 @@ dependencies:
     - field.field.paragraph.slide.field_description
     - field.field.paragraph.slide.field_image
     - field.field.paragraph.slide.field_link
+    - field.field.paragraph.slide.field_position
     - field.field.paragraph.slide.field_text
-    - image.style.thumbnail
+    - image.style.slide_desktop
     - paragraphs.paragraphs_type.slide
   module:
     - image
     - link
+    - options
     - text
 id: paragraph.slide.default
 targetEntityType: paragraph
@@ -19,33 +21,40 @@ mode: default
 content:
   field_description:
     weight: 3
-    settings:
-      rows: 5
-      placeholder: ''
+    label: above
+    settings: {  }
     third_party_settings: {  }
-    type: text_textarea
+    type: text_default
   field_image:
     weight: 0
+    label: hidden
     settings:
-      progress_indicator: throbber
-      preview_image_style: thumbnail
+      image_style: slide_desktop
+      image_link: ''
     third_party_settings: {  }
-    type: image_image
+    type: image
   field_link:
     weight: 2
+    label: above
     settings:
-      placeholder_url: ''
-      placeholder_title: ''
+      trim_length: 80
+      url_only: false
+      url_plain: false
+      rel: ''
+      target: ''
     third_party_settings: {  }
-    type: link_default
+    type: link
+  field_position:
+    weight: 4
+    label: above
+    settings: {  }
+    third_party_settings: {  }
+    type: list_default
   field_text:
     weight: 1
+    label: hidden
     settings:
-      size: 60
-      placeholder: ''
+      link_to_entity: false
     third_party_settings: {  }
-    type: string_textfield
-hidden:
-  created: true
-  status: true
-  uid: true
+    type: string
+hidden: {  }

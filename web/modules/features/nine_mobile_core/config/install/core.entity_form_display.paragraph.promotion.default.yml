@@ -1,0 +1,43 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.promotion.field_block_custom
+    - field.field.paragraph.promotion.field_promote_styling
+    - field.field.paragraph.promotion.field_text
+    - paragraphs.paragraphs_type.promotion
+  module:
+    - inline_entity_form
+id: paragraph.promotion.default
+targetEntityType: paragraph
+bundle: promotion
+mode: default
+content:
+  field_block_custom:
+    weight: 2
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+  field_promote_styling:
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    type: options_select
+  field_text:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.promote
+    - field.storage.block_content.field_desciption
+  module:
+    - text
+id: block_content.promote.field_desciption
+field_name: field_desciption
+entity_type: block_content
+bundle: promote
+label: Desciption
+description: ''
+required: true
+translatable: false
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

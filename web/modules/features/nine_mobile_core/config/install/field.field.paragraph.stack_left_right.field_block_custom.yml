@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - block_content.type.basic
+    - field.storage.paragraph.field_block_custom
+    - paragraphs.paragraphs_type.stack_left_right
+id: paragraph.stack_left_right.field_block_custom
+field_name: field_block_custom
+entity_type: paragraph
+bundle: stack_left_right
+label: Row
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:block_content'
+  handler_settings:
+    target_bundles:
+      basic: basic
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -7,7 +7,6 @@ dependencies:
     - field.field.node.service.field_link
     - field.field.node.service.field_number_integer
     - field.field.node.service.field_paragraphs
-    - field.field.node.service.field_summary
     - field.field.node.service.field_tags
     - field.field.node.service.field_text
     - field.field.node.service.field_text_title
@@ -26,7 +25,6 @@ hidden:
   field_link: true
   field_number_integer: true
   field_paragraphs: true
-  field_summary: true
   field_tags: true
   field_text: true
   field_text_title: true

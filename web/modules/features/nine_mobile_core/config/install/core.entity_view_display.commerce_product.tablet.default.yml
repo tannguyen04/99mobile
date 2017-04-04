@@ -6,15 +6,12 @@ dependencies:
     - field.field.commerce_product.tablet.body
     - field.field.commerce_product.tablet.field_brand
     - field.field.commerce_product.tablet.field_condition_availability
-    - field.field.commerce_product.tablet.field_description
     - field.field.commerce_product.tablet.field_images
     - field.field.commerce_product.tablet.field_operating_system
-    - field.field.commerce_product.tablet.field_paragraphs
     - field.field.commerce_product.tablet.stores
     - field.field.commerce_product.tablet.variations
   module:
     - commerce_product
-    - entity_reference_revisions
     - image
     - text
 id: commerce_product.tablet.default
@@ -42,12 +39,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_description:
-    weight: 16
-    label: above
-    settings: {  }
-    third_party_settings: {  }
-    type: text_default
   field_images:
     weight: 14
     label: above
@@ -63,14 +54,6 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
-  field_paragraphs:
-    weight: 15
-    label: above
-    settings:
-      view_mode: default
-      link: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_entity_view
   variations:
     type: commerce_add_to_cart
     weight: 10

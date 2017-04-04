@@ -1,0 +1,29 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.stack_left_right.field_block_custom
+    - paragraphs.paragraphs_type.stack_left_right
+  module:
+    - inline_entity_form
+id: paragraph.stack_left_right.default
+targetEntityType: paragraph
+bundle: stack_left_right
+mode: default
+content:
+  field_block_custom:
+    weight: 0
+    settings:
+      form_mode: default
+      label_singular: ''
+      label_plural: ''
+      allow_new: true
+      allow_existing: true
+      match_operator: CONTAINS
+      override_labels: false
+    third_party_settings: {  }
+    type: inline_entity_form_complex
+hidden:
+  created: true
+  status: true
+  uid: true

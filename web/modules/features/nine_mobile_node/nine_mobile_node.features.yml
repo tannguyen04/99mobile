@@ -1,6 +1,4 @@
-bundle: spectre
 excluded:
-  - block.block.ffw_d8_views_block__who_s_online_who_s_online_block
   - block.block.nine9_mobile_views_block__who_s_online_who_s_online_block
   - block.block.views_block__who_s_online_who_s_online_block
   - facets.facet_source.search_api__views_page__product_index___page_1

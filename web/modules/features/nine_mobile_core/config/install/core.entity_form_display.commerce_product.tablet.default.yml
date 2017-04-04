@@ -6,16 +6,13 @@ dependencies:
     - field.field.commerce_product.tablet.body
     - field.field.commerce_product.tablet.field_brand
     - field.field.commerce_product.tablet.field_condition_availability
-    - field.field.commerce_product.tablet.field_description
     - field.field.commerce_product.tablet.field_images
     - field.field.commerce_product.tablet.field_operating_system
-    - field.field.commerce_product.tablet.field_paragraphs
     - field.field.commerce_product.tablet.stores
     - field.field.commerce_product.tablet.variations
     - image.style.thumbnail
   module:
     - commerce
-    - entity_reference_revisions
     - image
     - inline_entity_form
     - path
@@ -54,13 +51,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_description:
-    weight: 36
-    settings:
-      rows: 5
-      placeholder: ''
-    third_party_settings: {  }
-    type: text_textarea
   field_images:
     weight: 34
     settings:
@@ -76,14 +66,6 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete
-  field_paragraphs:
-    weight: 35
-    settings:
-      match_operator: CONTAINS
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: entity_reference_revisions_autocomplete
   path:
     type: path
     weight: 30

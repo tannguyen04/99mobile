@@ -8,7 +8,7 @@ third_party_settings:
     available_menus:
       - main
     parent: 'main:'
-name: Article
+name: News
 type: article
 description: 'Use <em>articles</em> for time-sensitive content like news, press releases or blog posts.'
 help: ''
