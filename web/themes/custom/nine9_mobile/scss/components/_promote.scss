@@ -103,7 +103,7 @@
 }
 
 .grid {
-	&-2 {
+	&--2column {
 		.grid {
 			&__item {
 				@include susy-media(tablet) {
@@ -115,7 +115,7 @@
 		}
 	}
 
-	&-3 {
+	&--3column {
 		.grid {
 			&__item {
 				@include susy-media(tablet) {
