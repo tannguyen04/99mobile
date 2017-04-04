@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.tablet
+    - field.storage.commerce_product.field_operating_system
+    - taxonomy.vocabulary.operating_system
+id: commerce_product.tablet.field_operating_system
+field_name: field_operating_system
+entity_type: commerce_product
+bundle: tablet
+label: 'Operating system'
+description: ''
+required: true
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings:
+  handler: 'default:taxonomy_term'
+  handler_settings:
+    target_bundles:
+      operating_system: operating_system
+    sort:
+      field: _none
+    auto_create: false
+    auto_create_bundle: ''
+field_type: entity_reference

@@ -19,11 +19,14 @@
  * @ingroup themeable
  */
 #}
-<article{{ attributes }}>
-  {{ product.field_images[0] }}
-  <div class="paragraph--product-list__info">
-    <h3 class="paragraph--product-list__title"><a href="{{ product_url }}">{{ product.title.0 }}</a></h3>
-    <div class="paragraph--product-list__price">{{ product.variation_price.0 }}</div>
-    <a href="{{ product_url }}">{{ 'Read more'|t }}</a>
-  </div>
-</article>
+<div class="promote__item" style="background-image:url('{{ product.background }}')">
+  <article{{ attributes }}>
+    <a class="promote__link" href="{{ product_url }}">
+      <div class="promote__content">
+        <h3 class="promote__heading">{{ product.title.0 }}</h3>
+        <div class="promote__price">{{ product.variation_price.0 }}</div>
+        <p class="promote__cta btn--cta">{{ 'Read more'|t }}</p>
+      </div>
+    </a>
+  </article>
+</div>

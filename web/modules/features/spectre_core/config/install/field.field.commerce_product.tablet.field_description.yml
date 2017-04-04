@@ -1,0 +1,20 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - commerce_product.commerce_product_type.tablet
+    - field.storage.commerce_product.field_description
+  module:
+    - text
+id: commerce_product.tablet.field_description
+field_name: field_description
+entity_type: commerce_product
+bundle: tablet
+label: 'Short Description'
+description: ''
+required: false
+translatable: true
+default_value: {  }
+default_value_callback: ''
+settings: {  }
+field_type: text_long

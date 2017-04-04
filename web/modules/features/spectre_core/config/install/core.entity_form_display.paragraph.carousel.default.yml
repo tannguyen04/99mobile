@@ -1,0 +1,28 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.carousel.field_paragraph
+    - paragraphs.paragraphs_type.carousel
+  module:
+    - paragraphs
+id: paragraph.carousel.default
+targetEntityType: paragraph
+bundle: carousel
+mode: default
+content:
+  field_paragraph:
+    type: entity_reference_paragraphs
+    weight: 4
+    settings:
+      title: Paragraph
+      title_plural: Paragraphs
+      edit_mode: closed
+      add_mode: dropdown
+      form_display_mode: default
+      default_paragraph_type: slide
+    third_party_settings: {  }
+hidden:
+  created: true
+  status: true
+  uid: true

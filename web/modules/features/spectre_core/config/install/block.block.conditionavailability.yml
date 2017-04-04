@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.condition_availability
+  module:
+    - facets
+  theme:
+    - bartik
+id: conditionavailability
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:condition_availability'
+settings:
+  id: 'facet_block:condition_availability'
+  label: Condition/availability
+  provider: facets
+  label_display: visible
+visibility: {  }
