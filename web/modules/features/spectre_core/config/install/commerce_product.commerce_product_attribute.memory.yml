@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: memory
+label: Memory
+elementType: select

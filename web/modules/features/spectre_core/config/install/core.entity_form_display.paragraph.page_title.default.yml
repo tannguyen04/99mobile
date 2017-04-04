@@ -1,0 +1,30 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.paragraph.page_title.field_sub_title
+    - field.field.paragraph.page_title.field_text
+    - paragraphs.paragraphs_type.page_title
+id: paragraph.page_title.default
+targetEntityType: paragraph
+bundle: page_title
+mode: default
+content:
+  field_sub_title:
+    weight: 1
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+  field_text:
+    weight: 0
+    settings:
+      size: 60
+      placeholder: ''
+    third_party_settings: {  }
+    type: string_textfield
+hidden:
+  created: true
+  status: true
+  uid: true

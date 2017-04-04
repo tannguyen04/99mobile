@@ -165,6 +165,14 @@ function nine9_mobile_preprocess_commerce_product(&$variables) {
     }
   }
   $variables['scrollspy_build'] = $scrollspy_build;
+
+  $variables['product']['background'] = '';
+  if (isset($variables['product']['field_images'][0])) {
+    $field_images = $variables['product']['field_images'];
+    $cover_image = $field_images[0]['#item']->entity->getFileUri();
+    $image_url = ImageStyle::load('large')->buildUrl($cover_image);
+    $variables['product']['background'] = $image_url;
+  }
 }
 
 function nine9_mobile_preprocess_views_view_field(&$variables) {

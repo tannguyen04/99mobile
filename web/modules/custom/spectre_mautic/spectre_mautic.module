@@ -74,5 +74,5 @@ function spectre_mautic_entity_insert(Drupal\Core\Entity\EntityInterface $entity
  * Implements hook_page_attachments_alter();
  */
 function spectre_mautic_page_attachments_alter(&$page) {
-  $page['#attached']['library'][] = 'spectre_mautic/mautic-tracking-js';
+  //$page['#attached']['library'][] = 'spectre_mautic/mautic-tracking-js';
 }

@@ -1,0 +1,6 @@
+langcode: en
+status: true
+dependencies: {  }
+id: wide_text
+label: 'Wide text'
+behavior_plugins: {  }

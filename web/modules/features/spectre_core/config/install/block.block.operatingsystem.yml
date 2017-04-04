@@ -1,0 +1,21 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.operating_system
+  module:
+    - facets
+  theme:
+    - bartik
+id: operatingsystem
+theme: bartik
+region: sidebar_first
+weight: 0
+provider: null
+plugin: 'facet_block:operating_system'
+settings:
+  id: 'facet_block:operating_system'
+  label: 'Operating system'
+  provider: facets
+  label_display: visible
+visibility: {  }
