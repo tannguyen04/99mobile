@@ -12,7 +12,7 @@ entity_type: paragraph
 bundle: product_list
 label: Style
 description: ''
-required: true
+required: false
 translatable: false
 default_value:
   -

@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: mobile
-label: Mobile
-description: ''
-variationType: default
-injectVariationFields: true
-traits: {  }

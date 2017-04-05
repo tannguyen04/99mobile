@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: page_title
-label: 'Page Title'
-behavior_plugins: {  }

@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: stack_left_right
-label: 'Stack Left - Right'
-behavior_plugins: {  }

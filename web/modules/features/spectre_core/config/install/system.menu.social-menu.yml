@@ -1,7 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: social-menu
-label: 'Social Menu'
-description: ''
-locked: false

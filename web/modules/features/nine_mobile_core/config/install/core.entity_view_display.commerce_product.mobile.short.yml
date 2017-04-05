@@ -13,7 +13,7 @@ dependencies:
     - field.field.commerce_product.mobile.field_paragraphs
     - field.field.commerce_product.mobile.stores
     - field.field.commerce_product.mobile.variations
-    - image.style.medium
+    - image.style.large
   module:
     - commerce_product
     - image
@@ -26,8 +26,8 @@ content:
     weight: 0
     label: hidden
     settings:
-      image_style: medium
-      image_link: content
+      image_style: large
+      image_link: ''
     third_party_settings: {  }
     type: image
   variations:

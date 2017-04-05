@@ -6,10 +6,13 @@ dependencies:
     - field.field.commerce_product.tablet.body
     - field.field.commerce_product.tablet.field_brand
     - field.field.commerce_product.tablet.field_condition_availability
+    - field.field.commerce_product.tablet.field_description
     - field.field.commerce_product.tablet.field_images
     - field.field.commerce_product.tablet.field_operating_system
+    - field.field.commerce_product.tablet.field_paragraphs
     - field.field.commerce_product.tablet.stores
     - field.field.commerce_product.tablet.variations
+    - image.style.large
   module:
     - commerce_product
     - image
@@ -41,9 +44,9 @@ content:
     type: entity_reference_label
   field_images:
     weight: 14
-    label: above
+    label: hidden
     settings:
-      image_style: ''
+      image_style: large
       image_link: ''
     third_party_settings: {  }
     type: image
@@ -63,5 +66,7 @@ content:
     third_party_settings: {  }
 hidden:
   created: true
+  field_description: true
+  field_paragraphs: true
   stores: true
   uid: true

@@ -15,6 +15,7 @@ dependencies:
   - image
   - inline_entity_form
   - link
+  - nine_mobile_node
   - node
   - options
   - paragraphs

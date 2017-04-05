@@ -1,6 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: product_promotion
-label: 'Product Promotion'
-behavior_plugins: {  }
