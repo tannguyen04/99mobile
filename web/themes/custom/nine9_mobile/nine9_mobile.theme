@@ -45,6 +45,7 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
       $link['#options']['attributes']['class'][] = 'more-link';
       $active = SafeMarkup::format('<p class="promote__cta btn--cta">@label</p>', array('@label' => $link['#title']));
       $link['#title'] = $active;
+      $image = $object->get('field_image')->first();
       $image = array(
         '#item' => $image,
         '#theme' => 'image_formatter',
