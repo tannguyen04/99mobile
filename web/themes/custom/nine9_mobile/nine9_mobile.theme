@@ -1,6 +1,6 @@
 <?php
 use Drupal\image\Entity\ImageStyle;
-
+use Drupal\Component\Utility\SafeMarkup;
 /**
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
@@ -36,10 +36,15 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
   if ($element['#field_name'] == 'field_product_ref' && $element['#bundle'] == 'product_list') {
     $object = $element['#object'];
     $field_link = $object->get('field_link')->get(0);
+    $field_style = $object->get('field_product_list_style')->get(0);
+    if (!empty($field_style)) {
+      $variables['product_list_style'] = $field_style->getValue()['value'];
+    }
     if (!empty($field_link)) {
       $link = $field_link->view();
       $link['#options']['attributes']['class'][] = 'more-link';
-      $image = $object->get('field_image')->first();
+      $active = SafeMarkup::format('<p class="promote__cta btn--cta">@label</p>', array('@label' => $link['#title']));
+      $link['#title'] = $active;
       $image = array(
         '#item' => $image,
         '#theme' => 'image_formatter',
@@ -50,10 +55,10 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
           '#theme_wrappers' => array('container'),
           '#attributes' => array(
             'class' => array(
-              'paragraph--product-list__item paragraph--product-list__item--addition'
+              'product-list last-item last'
             ),
+            'style' => "background-image:url('https://o2.15gifts.com/public/leap/public/images/ShopHomeBg.png');"
           ),
-          'image' => $image,
           'read_more' => $link,
         ),
       );
@@ -166,12 +171,12 @@ function nine9_mobile_preprocess_commerce_product(&$variables) {
   }
   $variables['scrollspy_build'] = $scrollspy_build;
 
-  $variables['product']['background'] = '';
+  $variables['background'] = '';
   if (isset($variables['product']['field_images'][0])) {
     $field_images = $variables['product']['field_images'];
     $cover_image = $field_images[0]['#item']->entity->getFileUri();
     $image_url = ImageStyle::load('large')->buildUrl($cover_image);
-    $variables['product']['background'] = $image_url;
+    $variables['background'] = $image_url;
   }
 }
 
