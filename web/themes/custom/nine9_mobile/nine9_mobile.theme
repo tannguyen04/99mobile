@@ -46,6 +46,9 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
       $active = SafeMarkup::format('<p class="promote__cta btn--cta">@label</p>', array('@label' => $link['#title']));
       $link['#title'] = $active;
       $image = $object->get('field_image')->first();
+      $file_entity_uri = $image->entity->getFileUri();
+      $image_url = ImageStyle::load('large')->buildUrl($file_entity_uri);
+
       $image = array(
         '#item' => $image,
         '#theme' => 'image_formatter',
@@ -58,7 +61,7 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
             'class' => array(
               'product-list last-item last'
             ),
-            'style' => "background-image:url('https://o2.15gifts.com/public/leap/public/images/ShopHomeBg.png');"
+            'style' => "background-image:url('".$image_url."');"
           ),
           'read_more' => $link,
         ),
