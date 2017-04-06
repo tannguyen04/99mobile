@@ -61,7 +61,7 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
             'class' => array(
               'product-list last-item last'
             ),
-            'style' => "background-image:url('".$image_url."');"
+            'style' => "background-image:url('https://o2.15gifts.com/public/leap/public/images/ShopHomeBg.png');"
           ),
           'read_more' => $link,
         ),
