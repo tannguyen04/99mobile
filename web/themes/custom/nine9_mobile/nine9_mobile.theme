@@ -67,6 +67,38 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
         ),
       );
     }
+    //We alter markup field product if product_list_style == 'big'
+    if ($variables['product_list_style'] == 'big') {
+      foreach ($variables['items'] as $key => &$item) {
+        $product = $item['content']['#commerce_product'];
+        $product_price = $product->get('variations')->first()->entity->get('price')->view();
+        $product_price = $product_price[0]['#markup'];
+        $product_title = $product->getTitle();
+        $product_image = $product->get('field_images');
+        if (!$product_image->isEmpty()) {
+          $product_image = $product_image->first()->entity->getFileUri();
+          $product_image = ImageStyle::load('large')->buildUrl($product_image);
+        }
+        $content = array(
+          'link' => array(
+            '#type' => 'html_tag',
+            '#tag' => 'a',
+            '#attributes' => array(
+              'href' => $product->Url(),
+            ),
+            '#value' => '<div class="promote__content"><h3 class="promote__heading">'.$product_title.'</h3><div class="promote__text">'.$product_price.'</div><p class="promote__cta btn--cta">' . t('Read more') . '</p></div>',
+          ),
+          '#theme_wrappers' => array(
+            'container',
+          ),
+          '#attributes' => array(
+            'class' => array('promote__item'),
+            'style' => 'background-image:url("'.$product_image.'")',
+          ),
+        );
+        $item['content'] = $content;
+      }
+    }
   }
 }
 
@@ -132,6 +164,7 @@ function nine9_mobile_preprocess_paragraph(&$variables) {
     if (!empty($modified)) {
       $modified = $modified->getValue();
       $variables['attributes']['class'][] = 'paragraph--'. str_replace('_', '-', $paragraph->bundle()). '--'. $modified['value'];
+      $variables['product_list_style'] = $modified['value'];
     }
   }
   if ($paragraph->bundle() == 'stack_item') {

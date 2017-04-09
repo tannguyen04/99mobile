@@ -44,7 +44,7 @@
     'paragraph--' ~ paragraph.bundle|clean_class,
     'paragraph--type--' ~ paragraph.bundle|clean_class,
     view_mode ? 'paragraph--view-mode--' ~ view_mode|clean_class,
-    'grid--6column'
+    product_list_style == 'big' ? 'grid--2column' : 'grid--6column'
   ]
 %}
 {% block paragraph %}

@@ -64,6 +64,10 @@
     {
       "name":"product-list",
       "group":"component"
+    },
+    {
+      "name":"left-right",
+      "group":"component"
     }
   ]
 }

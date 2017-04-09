@@ -39,7 +39,13 @@
 #}
 
 {% for item in items %}
-  <div class="grid__item"><div class="{{ product_list_style }} product-list">{{ item.content }}</div></div>
+  <div class="grid__item">
+    {% if product_list_style != 'big' %}
+      <div class="{{ product_list_style }} product-list">{{ item.content }}</div>
+    {% else %}
+      {{ item.content }}
+    {% endif %}
+  </div>
 {% endfor %}
 <div class="grid__item">
 {{ item_addition }}
