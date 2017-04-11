@@ -1,0 +1,43 @@
+.left-right__item {
+
+  @include susy-media(tablet) {
+		display: flex;
+	}
+
+	&.odd {
+  	@include susy-media(tablet) {
+			flex-direction: row-reverse;
+		}
+	}
+
+	> * {
+  	@include susy-media(tablet) {
+			width: 50%;
+		}
+	}
+
+	&__image {
+		line-height: 0;
+	}
+
+	&__text {
+		padding: rem(10px 15px);
+		
+		h3 {
+			margin-bottom: rem(10px);
+			font-size: rem(20px);
+		}
+
+		p {
+			font-size: rem(15px);
+		}
+
+  	@include susy-media(tablet) {
+  		padding: rem(25px 30px);
+
+			h3 {
+				margin-bottom: rem(14px);
+			}
+  	}
+	}
+}
