@@ -111,13 +111,12 @@ $susy-media: (
 
 .grid__item { 
   @include susy-media(tablet) {
-    float: left;
     padding: 10px;
   }
 }
 
-
 .grid {
+  &
   &--3column {
     .grid {
       &__item {
@@ -141,9 +140,21 @@ $susy-media: (
 
 @for $i from 1 through 6 {
   .grid--#{$i}column {
+    
+    .paragraph__content {
+      @include susy-media(tablet) {
+        display: flex;
+        align-items: stretch;
+      }
+    }
+
     .grid__item {
       @include susy-media(tablet) {
         width: 100%/$i;
+
+        > div {
+          height: 100%;
+        }
       }
     }
   }
