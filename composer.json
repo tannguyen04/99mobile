@@ -41,7 +41,10 @@
         "drupal/bootstrap": "^3.2",
         "drupal/menu_block": "^1.4",
         "drupal/features": "^3.5",
-        "mautic/api-library": "^2.6"
+        "mautic/api-library": "^2.6",
+        "drupal/media_entity": "^1.6",
+        "drupal/media_entity_image": "^1.2",
+        "drupal/file_browser": "^1.0@alpha"
     },
     "require-dev": {
         "behat/mink": "~1.7",
