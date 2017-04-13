@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "8b41bd907f2f7567ddf72a4670f8713c",
+    "content-hash": "9c374f5d140540dd8afd2d8b3bb31772",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1313,6 +1313,44 @@
                 "source": "https://drupal.org/project/ckeditor_media_embed",
                 "issues": "https://drupal.org/project/issues/ckeditor_media_embed"
             }
+        },
+        {
+            "name": "drupal/color_field",
+            "version": "dev-2.x",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/color_field",
+                "reference": "9bbbb07f08a28d20a3896ed9b89b00e2afcb13e3"
+            },
+            "require": {
+                "drupal/core": "*"
+            },
+            "type": "drupal-module",
+            "extra": {
+                "branch-alias": {
+                    "dev-2.x": "2.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-2.0-rc1+6-dev",
+                    "datestamp": "1448631239"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "targoo",
+                    "homepage": "https://www.drupal.org/user/431910"
+                }
+            ],
+            "description": "Provides a color field type to store the color value and opacity",
+            "homepage": "https://www.drupal.org/project/color_field",
+            "support": {
+                "source": "http://cgit.drupalcode.org/color_field"
+            },
+            "time": "2015-11-27 13:54:58"
         },
         {
             "name": "drupal/commerce",
@@ -2666,7 +2704,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://ftp.drupal.org/files/projects/file_browser-8.x-1.0-alpha4.zip",
-                "reference": null,
+                "reference": "8.x-1.0-alpha4",
                 "shasum": "3f983634b5883ea31fcd08ea33a7238ea4f62614"
             },
             "require": {
@@ -7777,7 +7815,8 @@
         "drupal/search_api": 20,
         "drupal/facets": 20,
         "drupal/examples": 20,
-        "drupal/file_browser": 15
+        "drupal/file_browser": 15,
+        "drupal/color_field": 20
     },
     "prefer-stable": true,
     "prefer-lowest": false,
