@@ -139,19 +139,20 @@ $susy-media: (
 }
 
 @for $i from 1 through 6 {
+
   .grid--#{$i}column {
     
     .paragraph__content {
       @include susy-media(tablet) {
         display: flex;
         align-items: stretch;
+        flex-wrap:wrap;
       }
     }
 
     .grid__item {
       @include susy-media(tablet) {
         width: 100%/$i;
-
         > div {
           height: 100%;
         }
