@@ -9,7 +9,6 @@ function nine9_mobile_preprocess_node(&$variables) {
 
 function nine9_mobile_preprocess_field(&$variables, $hook) {
   $element = $variables['element'];
-
   if ($element['#field_name'] == 'field_block_custom' && $element['#bundle'] == 'promotion') {
     $items = $element['#items'];
     for ($i=0; $i < $items->count(); $i++) {
@@ -207,7 +206,6 @@ function nine9_mobile_preprocess_commerce_product(&$variables) {
     }
   }
   $variables['scrollspy_build'] = $scrollspy_build;
-
   $variables['background'] = '';
   if (isset($variables['product']['field_images'][0])) {
     $field_images = $variables['product']['field_images'];

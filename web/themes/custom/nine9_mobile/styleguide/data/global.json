@@ -17,6 +17,10 @@
   ],
   "list_components":[
     {
+      "name":"grid-product",
+      "group":"component"
+    },
+    {
       "name":"headings",
       "group":"basic",
       "hidecode":true
@@ -62,7 +66,7 @@
       "group":"component"
     },
     {
-      "name":"product-list",
+      "name":"productl-list",
       "group":"component"
     },
     {
