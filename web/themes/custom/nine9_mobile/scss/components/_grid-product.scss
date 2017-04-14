@@ -1,9 +1,9 @@
-.block-grid-product {
-  padding: 30px;
+.product {
+  padding: 30px 30px 0;
   position: relative;
-  width: 23%;
-  display: inline-block;
-  background: #efefef;
+  background: $gray-ef;
+  margin-top: 30px;
+  height: auto !important;
 
   &__status {
     position: absolute;
@@ -21,13 +21,11 @@
       top: 25px;
       left: -5px;
       padding: 6px 25px 5px;
-      -ms-transform: rotate(45deg);
-      -webkit-transform: rotate(45deg);
       transform: rotate(45deg);
       font-size: 10px;
-      font-size: 0.625rem;
+      font-size: 12px;
       color: white;
-      background-color: #032b5a;
+      background-color: $blue_slider;
       white-space: nowrap;
       display: block;
     }
@@ -37,16 +35,18 @@
     img {
       display: block;
       margin: 0 auto 25px auto;
-      height: 200px;
     }
   }
 
-  &__content-bottom {
+  &__price-info {
+    font-size: 0.75rem;
+    font-family: Frutiger55,sans-serif;
+    color: $blue_slider;
 
     .costs {
       font-size: 0.75rem;
       font-family: Frutiger55,sans-serif;
-      color: #032b5a;
+      color: $blue_slider;
     }
 
     .headline {
@@ -59,32 +59,41 @@
     }
   }
 
-  &__compare {
-    background-color: #e8e8e8;
-    font-size: 12px;
-    position: relative;
-    z-index: 1;
+  &__short-info {
+    font-size: 14px;
+  }
 
-    label {
+  &__action-links {
+    a {
       display: block;
-      padding: 12px 18px;
+      padding: 12px 18px 12px 55px;
+      margin: 0 -30px;
       height: 40px;
       cursor: pointer;
-      color: #032b5a;
+      color: $blue_slider;
+      background-color: #e8e8e8;
+      font-size: 12px;
+      position: relative;
+      z-index: 1;
+      background: url(https://www.o2.co.uk/upgrade/static/newShopStatic/_assets/img/modules/device-tile/compare_white_button_plus_sign.png) no-repeat scroll 0 0 #e8e8e8;
+      background-position: 30px center;
+      transition: .5s;
 
-      .plus {
-        display: inline-block;
-        width: 16px;
-        height: 16px;
-        background: url(https://www.o2.co.uk/upgrade/static/newShopStatic/_assets/img/modules/device-tile/compare_white_button_plus_sign.png) no-repeat;
+      &:hover {
+        color: $primary-color;
+        transition: .5s;
+        font-size: 13px;
       }
     }
+  }
 
-    .compare-text {
-      position: relative;
-      margin-left: 5px;
-      bottom: 4px;
-    }
+  &__price {
+    font-size: 25px;
+    line-height: 27px;
+    line-height: 1.6875rem;
+    font-family: Frutiger45Light,sans-serif;
+    display: block;
+    margin-bottom: 20px;
   }
 
   &__rating {
@@ -96,40 +105,61 @@
       flex-shrink: 0;
       margin-top: -5px;
       width: 80px;
-
-      .star-rating {
-        position: relative;
-        display: inline-block;
-        overflow: hidden;
-        height: 21px;
-        font-family: 'BVCustom', serif;
-        font-size: 17px;
-        line-height: 21px;
-        letter-spacing: 3px;
-        color: #91a1b3;
-      }
-
-      .star-rating__stars {
-        width: 87.788%;
-        position: absolute;
-        left: 0;
-        top: 0;
-        color: #ffcc00;
-        overflow: hidden;
-      }
     }
 
-    .colours {
-      flex-grow: 1;
-      text-align: right;
-      line-height: 11px;
+    .star-rating {
+      position: relative;
+      display: inline-block;
+      overflow: hidden;
+      height: 21px;
+      font-family: 'BVCustom', serif;
+      font-size: 17px;
+      line-height: 21px;
+      letter-spacing: 3px;
+      color: #91a1b3;
+    }
 
-      .swatch {
-        display: inline-block;
-        margin: 0 5px 5px 0;
-        border: 1px solid black;
-        height: 11px;
-        width: 11px;
+    .star-rating__stars {
+      width: 87.788%;
+      position: absolute;
+      left: 0;
+      top: 0;
+      color: #ffcc00;
+      overflow: hidden;
+    }
+    
+  }
+
+  &__color {
+    flex-grow: 1;
+    text-align: right;
+    line-height: 11px;
+
+    .swatch {
+      display: inline-block;
+      margin: 0 5px 5px 0;
+      border: 1px solid black;
+      height: 11px;
+      width: 11px;
+
+      &.bg-red {
+        background: rgb(183,49,67);
+      }
+
+      &.bg-black {
+        background: $black;
+      }
+
+      &.bg-pink {
+        background: rgb(223,191,191);
+      }
+
+      &.bg-gray {
+        background: #999;
+      }
+
+      &.bg-yellow {
+        background: rgb(229,187,9);
       }
     }
   }
@@ -143,28 +173,5 @@
     overflow: hidden;
     line-height: 30px;
     line-height: 1.875rem;
-  }
-
-  &__ribbon {
-    margin-left: -30px;
-    padding-left: 30px;
-    display: table;
-    margin: 0 0 10px -20px;
-    padding: 2px 15px 2px 20px;
-    height: 46px;
-    background: transparent url(https://www.o2.co.uk/upgrade/static/newShopStatic/_assets/img/modules/ribbon-bg.png) top right no-repeat;
-
-    &__text {
-      display: table-cell;
-      vertical-align: middle;
-      width: 180px;
-      width: 11.25rem;
-      overflow: hidden;
-      font-size: 12px;
-      font-size: 0.75rem;
-      font-weight: bold;
-      color: white;
-      margin: 0;
-    }
   }
 }
