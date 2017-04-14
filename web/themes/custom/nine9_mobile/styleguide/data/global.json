@@ -72,6 +72,10 @@
     {
       "name":"left-right",
       "group":"component"
+    },
+    {
+      "name":"node-service",
+      "group":"component"
     }
   ]
 }

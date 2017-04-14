@@ -127,8 +127,11 @@ function nine9_mobile_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'has-featured-top';
   }
   // Admore about layout
-  if (isset($variables['node_type']) && $variables['node_type'] == 'landing_page') {
-    $variables['attributes']['class'][] = 'layout-full';
+  if (isset($variables['node_type'])) {
+    $node_page_full = in_array($variables['node_type'], array('landing_page', 'service'));
+    if ($node_page_full) {
+      $variables['attributes']['class'][] = 'layout-full';
+    }
   }
 }
 
