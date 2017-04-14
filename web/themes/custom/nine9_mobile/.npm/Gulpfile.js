@@ -50,7 +50,7 @@ gulp.task('sass-dev', function () {
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
-    .pipe(autoprefixer({browsers: ['last 2 versions']}))
+    .pipe(autoprefixer({browsers: ['safari >= 8', 'last 3 versions', '> 2%']}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(src.css))
     .pipe(filter("**/*.css"))
@@ -68,7 +68,7 @@ gulp.task('sass-prod', function () {
     .on('error', function (err) {
       console.error('Error!', err.message);
     })
-    .pipe(autoprefixer({browsers: ['last 2 versions']}))
+    .pipe(autoprefixer({browsers: ['safari >= 8', 'last 3 versions', '> 2%']}))
     .pipe(gulp.dest(src.css))
     .pipe(filter("**/*.css"))
     .pipe(reload({
