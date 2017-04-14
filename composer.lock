@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "962733280adca5b2280e2fcdaf1a3ead",
+    "content-hash": "569feeb5fc0d4d5ac4ca077b353a2be1",
     "packages": [
         {
             "name": "alchemy/zippy",
@@ -1223,56 +1223,6 @@
             "homepage": "http://drupal.org/project/address",
             "support": {
                 "source": "http://cgit.drupalcode.org/address"
-            }
-        },
-        {
-            "name": "drupal/bootstrap",
-            "version": "3.2.0",
-            "source": {
-                "type": "git",
-                "url": "https://git.drupal.org/project/bootstrap",
-                "reference": "8.x-3.2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.2.zip",
-                "reference": "8.x-3.2",
-                "shasum": "1638ded543a50a5dce558c2a8177a945a3e5a4cb"
-            },
-            "require": {
-                "drupal/core": "~8.0"
-            },
-            "type": "drupal-theme",
-            "extra": {
-                "branch-alias": {
-                    "dev-3.x": "3.x-dev"
-                },
-                "drupal": {
-                    "version": "8.x-3.2",
-                    "datestamp": "1487640876"
-                }
-            },
-            "notification-url": "https://packages.drupal.org/8/downloads",
-            "license": [
-                "GPL-2.0+"
-            ],
-            "authors": [
-                {
-                    "name": "markcarver",
-                    "homepage": "https://www.drupal.org/user/501638"
-                },
-                {
-                    "name": "neardark",
-                    "homepage": "https://www.drupal.org/user/661076"
-                },
-                {
-                    "name": "wundo",
-                    "homepage": "https://www.drupal.org/user/25523"
-                }
-            ],
-            "homepage": "https://www.drupal.org/project/bootstrap",
-            "support": {
-                "source": "http://cgit.drupalcode.org/bootstrap"
             }
         },
         {
@@ -2574,7 +2524,7 @@
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/facets",
-                "reference": "199477d3cd853e59c1f979a6fd2937ae06273541"
+                "reference": "ac55f66e7589f6ab3b3eeaa30fa822cde8dd32eb"
             },
             "require": {
                 "drupal/core": "~8.0"
@@ -2588,8 +2538,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-alpha7+46-dev",
-                    "datestamp": "1489606382"
+                    "version": "8.x-1.0-alpha9+1-dev",
+                    "datestamp": "1491906242"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -2608,26 +2558,6 @@
                 {
                     "name": "borisson_",
                     "homepage": "https://www.drupal.org/user/2393360"
-                },
-                {
-                    "name": "drunken monkey",
-                    "homepage": "https://www.drupal.org/user/205582"
-                },
-                {
-                    "name": "jurcello",
-                    "homepage": "https://www.drupal.org/user/774070"
-                },
-                {
-                    "name": "marthinal",
-                    "homepage": "https://www.drupal.org/user/387593"
-                },
-                {
-                    "name": "mr.baileys",
-                    "homepage": "https://www.drupal.org/user/383424"
-                },
-                {
-                    "name": "swentel",
-                    "homepage": "https://www.drupal.org/user/107403"
                 }
             ],
             "description": "The Facet module allows site builders to easily create and manage faceted search interfaces.",
@@ -2637,7 +2567,7 @@
                 "issues": "https://www.drupal.org/project/issues/facets",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
             },
-            "time": "2017-03-16 07:05:14"
+            "time": "2017-04-12 19:20:14"
         },
         {
             "name": "drupal/features",
@@ -3208,11 +3138,17 @@
         },
         {
             "name": "drupal/search_api",
-            "version": "dev-1.x",
+            "version": "1.0.0-rc2",
             "source": {
                 "type": "git",
                 "url": "https://git.drupal.org/project/search_api",
-                "reference": "1a29559f9f09b181e5da4b9becf36ae9a41b9440"
+                "reference": "8.x-1.0-rc2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/search_api-8.x-1.0-rc2.zip",
+                "reference": null,
+                "shasum": "174a463535c6b77c4c9ec9481a7ab7989e661868"
             },
             "require": {
                 "drupal/core": "^8.2"
@@ -3226,8 +3162,8 @@
                     "dev-1.x": "1.x-dev"
                 },
                 "drupal": {
-                    "version": "8.x-1.0-beta4+32-dev",
-                    "datestamp": "1488030783"
+                    "version": "8.x-1.0-rc2",
+                    "datestamp": "1491843242"
                 }
             },
             "notification-url": "https://packages.drupal.org/8/downloads",
@@ -3254,8 +3190,7 @@
                 "source": "http://git.drupal.org/project/search_api.git",
                 "issues": "https://www.drupal.org/project/issues/search_api",
                 "irc": "irc://irc.freenode.org/drupal-search-api"
-            },
-            "time": "2017-03-13 17:16:05"
+            }
         },
         {
             "name": "drupal/state_machine",
@@ -6554,6 +6489,60 @@
             "time": "2015-06-14T21:17:01+00:00"
         },
         {
+            "name": "drupal/bootstrap",
+            "version": "3.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://git.drupal.org/project/bootstrap",
+                "reference": "8.x-3.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://ftp.drupal.org/files/projects/bootstrap-8.x-3.2.zip",
+                "reference": "8.x-3.2",
+                "shasum": "1638ded543a50a5dce558c2a8177a945a3e5a4cb"
+            },
+            "require": {
+                "drupal/core": "~8.0"
+            },
+            "type": "drupal-theme",
+            "extra": {
+                "branch-alias": {
+                    "dev-3.x": "3.x-dev"
+                },
+                "drupal": {
+                    "version": "8.x-3.2",
+                    "datestamp": "1491860942"
+                }
+            },
+            "notification-url": "https://packages.drupal.org/8/downloads",
+            "license": [
+                "GPL-2.0+"
+            ],
+            "authors": [
+                {
+                    "name": "markcarver",
+                    "homepage": "https://www.drupal.org/user/501638"
+                },
+                {
+                    "name": "neardark",
+                    "homepage": "https://www.drupal.org/user/661076"
+                },
+                {
+                    "name": "sylus",
+                    "homepage": "https://www.drupal.org/user/339714"
+                },
+                {
+                    "name": "wundo",
+                    "homepage": "https://www.drupal.org/user/25523"
+                }
+            ],
+            "homepage": "https://www.drupal.org/project/bootstrap",
+            "support": {
+                "source": "http://cgit.drupalcode.org/bootstrap"
+            }
+        },
+        {
             "name": "fabpot/goutte",
             "version": "v3.2.1",
             "source": {
@@ -7834,7 +7823,6 @@
         "drupal/commerce": 20,
         "drupal/swiftmailer": 20,
         "drupalcommerce/commerce_base": 20,
-        "drupal/search_api": 20,
         "drupal/facets": 20,
         "drupal/examples": 20,
         "drupal/file_browser": 15,

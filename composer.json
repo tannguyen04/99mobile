@@ -33,7 +33,7 @@
         "drupal/swiftmailer": "1.x-dev",
         "drupalcommerce/commerce_base": "dev-8.x-1.x",
         "drupal/paragraphs": "1.1",
-        "drupal/search_api": "1.x-dev",
+        "drupal/search_api": "1.0-rc2",
         "drupal/facets": "1.x-dev",
         "drupal/examples": "1.x-dev",
         "drupal/ckeditor_media_embed": "^1.0",
