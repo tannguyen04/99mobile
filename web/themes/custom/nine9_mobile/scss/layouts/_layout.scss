@@ -34,6 +34,14 @@ body {
   a {
     color: $gray-e3;
   }
+
+  &__top {
+    .region {
+      float: left;
+      width: 25%;
+      padding: 20px;
+    }
+  }
 }
 
 .region-header-wrapper {
