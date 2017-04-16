@@ -17,6 +17,10 @@
   ],
   "list_components":[
     {
+      "name":"node-service",
+      "group":"component"
+    },
+    {
       "name":"grid-product",
       "group":"component"
     },
