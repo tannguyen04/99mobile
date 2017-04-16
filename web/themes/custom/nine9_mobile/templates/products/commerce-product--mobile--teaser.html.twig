@@ -21,14 +21,34 @@
 #}
 <article{{ attributes }}>
   <div class="product product--teaser">
-    <div class="product__images">
-      {{ product.field_images.0 }}
-    </div>
-    <div class="product__info">
-      <h1 class="product__title">{{ product.title.0 }}</h1>
-      <div class="product__color">{{ product.variations }}</div>
-      <div class="product__description">{{ product.field_description.0 }}</div>
-      <div class="product__price">{{ product.variation_price }}</div>
+    <a href="{{ product_url }}">
+      {% if (product.field_condition_availability[0]['#plain_text'] == 'New') %}
+      <div class="product__status">
+        <span>{{ product.field_condition_availability.0 }}</span>
+      </div>
+      {% endif %}
+      <div class="product__content-top">
+        {{ product.field_images.0 }}
+        <div class="product__rating">
+          <div class="star-rating" >★★★★★
+            <div class="star-rating__stars">★★★★★</div>
+          </div>
+          <div class="product__color">
+              {{ product.variations }}
+          </div>
+        </div>
+        <h2 class="product__title">{{ product.title.0 }}</h2>
+        <div class="product__short-info">
+          {{ product.field_description.0 }}
+        </div>
+        <div class="product__price-info">
+          Chỉ từ
+          <div class="product__price">{{ product.variation_price }}</div>
+        </div>
+      </div>
+    </a>
+    <div class="product__action-links">
+      <a href="{{ product_url }}">Read more</a>
     </div>
   </div>
 </article>

@@ -76,7 +76,7 @@
     {
       "name":"node-service",
       "group":"component"
-    }
+    },
     {
       "name":"blog-list",
       "group":"component"

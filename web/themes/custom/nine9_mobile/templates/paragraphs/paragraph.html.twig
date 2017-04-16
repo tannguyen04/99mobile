@@ -50,7 +50,7 @@
   <div{{ attributes.addClass(classes) }}>
     <div class="content-inner">
       {% block title %}
-        {% if content.field_text %}
+        {% if content.field_text.0 %}
           <h2 class="paragraph__title">{{ content.field_text }}</h2>
         {% endif %}
       {% endblock %}
