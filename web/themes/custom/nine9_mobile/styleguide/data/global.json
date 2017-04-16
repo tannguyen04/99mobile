@@ -17,6 +17,10 @@
   ],
   "list_components":[
     {
+      "name":"nav-primary",
+      "group":"component"
+    },
+    {
       "name":"node-service",
       "group":"component"
     },
@@ -28,10 +32,6 @@
       "name":"headings",
       "group":"basic",
       "hidecode":true
-    },
-    {
-      "name":"nav-primary",
-      "group":"component"
     },
     {
       "name":"paragraphs",
