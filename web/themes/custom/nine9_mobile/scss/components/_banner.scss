@@ -1,0 +1,110 @@
+.banner {
+  position: relative;
+  height: 300px;
+
+  &__image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    overflow: hidden;
+
+    img {
+      height: 100%;
+      left: 50%;
+      max-width: inherit;
+      position: absolute;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      width: auto;
+
+      @include susy-media(desktop-wide) {
+        width: 100%;
+        height: auto;
+      }
+    }
+  }
+
+  &__content {
+    padding: 30px 10px;
+    position: relative;
+    z-index: 1;
+
+    @include susy-media(desktop) {
+      padding: 40px 20px;
+    }
+
+    @include susy-media(desktop-wide) {
+      padding: 40px 0;
+    }
+
+    &__inner {
+      color: $white;
+      width: 90%;
+
+      @include susy-media(tablet) {
+        width: 42%;
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: 30px;
+    font-size: 25px;
+
+    @include susy-media(tablet) {
+      font-size: 30px;
+    }
+
+    @include susy-media(desktop) {
+      font-size: 40px;
+    }
+  }
+
+  &__description {
+    @include susy-media(tablet) {
+      font-size: 18px;
+    }
+
+    @include susy-media(desktop) {
+      font-size: 20px;
+    }
+  }
+}
+
+.service {
+  &__summary {
+    h2 {
+      margin-bottom: 20px;
+    }
+
+    h3, h4 {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__content {
+    @include susy-media(tablet) {
+      width: 70%;
+      float: left;
+      padding: 0;
+      padding-right: 50px;
+    }
+  }
+
+  &__price {
+    background: $gray-ef;
+    padding: 15px;
+
+    @include susy-media(tablet) {
+      width: 30%;
+      float: left;
+      padding: 30px;
+    }
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

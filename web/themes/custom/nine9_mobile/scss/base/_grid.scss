@@ -81,6 +81,9 @@ $susy-media: (
 
   // min-width: 1999px
   desktop: em($desktop) * 1em,
+  
+  // min-width: 1999px
+  desktop-wide: em($desktop-wide) * 1em,
 );
 
 %container,
@@ -93,6 +96,7 @@ $susy-media: (
 
   @include susy-media(desktop) {
     @include container($susy-desktop);
+    padding: 0 20px;
   }
 }
 
