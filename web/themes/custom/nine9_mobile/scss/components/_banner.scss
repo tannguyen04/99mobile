@@ -2,6 +2,10 @@
   position: relative;
   height: 300px;
 
+  @include susy-media(desktop-wide) {
+    height: 450px;
+  }
+
   &__image {
     position: absolute;
     top: 0;
@@ -16,13 +20,8 @@
       max-width: inherit;
       position: absolute;
       top: 50%;
-      transform: translate(-50%, -50%);
+      transform: translate(-45%, -50%);
       width: auto;
-
-      @include susy-media(desktop-wide) {
-        width: 100%;
-        height: auto;
-      }
     }
   }
 
@@ -36,7 +35,7 @@
     }
 
     @include susy-media(desktop-wide) {
-      padding: 40px 0;
+      padding: 60px 0;
     }
 
     &__inner {
