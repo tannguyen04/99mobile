@@ -16,7 +16,7 @@ content:
     weight: 0
     label: hidden
     settings:
-      shape: circle
+      shape: square
       width: '10'
       height: '10'
       opacity: '1'

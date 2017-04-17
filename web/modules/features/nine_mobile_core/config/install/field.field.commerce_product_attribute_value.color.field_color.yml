@@ -12,10 +12,10 @@ entity_type: commerce_product_attribute_value
 bundle: color
 label: Color
 description: ''
-required: false
+required: true
 translatable: false
 default_value: {  }
 default_value_callback: ''
 settings:
-  opacity: 1
+  opacity: 0
 field_type: color_field_type
