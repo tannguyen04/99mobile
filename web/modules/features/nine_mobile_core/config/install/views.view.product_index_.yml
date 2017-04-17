@@ -350,7 +350,7 @@ display:
       arguments: {  }
       display_extenders: {  }
       use_ajax: true
-      css_class: grid--4column
+      css_class: grid--3column
     cache_metadata:
       max-age: -1
       contexts:
