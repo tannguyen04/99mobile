@@ -5,6 +5,23 @@ use Drupal\Component\Utility\SafeMarkup;
  * Implements hook_preprocess_HOOK() for node.html.twig.
  */
 function nine9_mobile_preprocess_node(&$variables) {
+  $node = $variables['node'];
+  $type = $node->bundle();
+  if ($type == 'article') {
+    foreach ($variables['content']['field_tags'] as $key => $value) {
+      if (is_numeric($key)) {
+        $items[] = $value;
+      }
+    }
+    $variables['content']['field_tags'] = array(
+      '#theme' => 'item_list',
+      '#items' => $items,
+      '#type' => 'ul',
+      '#attributes' => array(
+        'class' => array('node-news__category')
+      ),
+    );
+  }
 }
 
 function nine9_mobile_preprocess_field(&$variables, $hook) {
@@ -231,6 +248,14 @@ function nine9_mobile_preprocess_views_view_field(&$variables) {
   $variables['output'] = $variables['field']->advancedRender($variables['row']);
 }
 
+/**
+ * Implements template_preprocess_views_view
+ */
+function nine9_mobile_preprocess_views_view(&$variables) {
+  // kint($variables);
+  // die;
+}
+
 
 /**
  * Implements hook_theme_suggestions_HOOK_alter().
@@ -242,4 +267,7 @@ function nine9_mobile_theme_suggestions_page_alter(array &$suggestions, array $v
     $suggestions[] = 'page__'.$content_type;
   }
 }
+
+
+
 

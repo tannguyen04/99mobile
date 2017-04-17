@@ -75,6 +75,7 @@
 {%
   set classes = [
     'node',
+    'node-news',
     'news--teaser',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
@@ -85,25 +86,24 @@
 %}
 {{ attach_library('classy/node') }}
 <article{{ attributes.addClass(classes) }}>
-  <div class="news__image">
+  <div class="node-news__image">
     {{ content.field_image }}
   </div>
-  <div class="news__info">
+  <div class="node-news__content">
+    {{ content.field_tags }}
     {{ title_prefix }}
-      <h2{{ title_attributes }}>
-        <a href="{{ url }}" rel="bookmark">{{ label }}</a>
-      </h2>
+    <h2{{ title_attributes.addClass('node-news__title') }}>
+      <a href="{{ url }}" rel="bookmark">{{ label }}</a>
+    </h2>
     {{ title_suffix }}
-    <div{{ content_attributes.addClass('news__content') }}>
-      {{ content|without('field_image', 'field_tags') }}
+    <div class="node-news__summary">
+      {{ content.body }}
     </div>
-    <footer>
-      <div class="news__tags">{{ content.field_tags }}</div>
-      <div class="news__submitted">
-        {% trans %}Post by {{ author_name }} on {{ date }}{% endtrans %}
-        {{ metadata }}
-      </div>
-    </footer>
+    <ul class="node-news__submitted">
+      <li>{% trans %}Post by {{ author_name }}</li>
+      <li>on {{ date }}{% endtrans %}
+      {{ metadata }}</li>
+    </ul>
   </div>
 </article>
 

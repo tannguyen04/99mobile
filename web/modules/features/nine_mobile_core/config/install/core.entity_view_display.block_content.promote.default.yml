@@ -25,12 +25,14 @@ content:
     settings: {  }
     third_party_settings: {  }
     type: list_default
+    region: content
   field_desciption:
     weight: 4
     label: hidden
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_image:
     weight: 2
     label: hidden
@@ -39,6 +41,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_link:
     weight: 3
     label: hidden
@@ -50,6 +53,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
   field_text:
     weight: 1
     label: hidden
@@ -57,4 +61,5 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
 hidden: {  }

@@ -1,0 +1,17 @@
+
+nine_mobile_product.nine_mobile_controller_hello:
+  path: '/nine_mobile_product/hello/{name}'
+  defaults:
+    _controller: '\Drupal\nine_mobile_product\Controller\NineMobileController::hello'
+    _title: 'Nine Mobile Controller'
+  requirements:
+    _permission: 'access content'
+
+nine_mobile_product.nine_mobile_list_mobile_form:
+  path: '/dien-thoai/all'
+  defaults:
+    _form: '\Drupal\nine_mobile_product\Form\NineMobileListMobileForm'
+    _title: 'NineMobileListMobileForm'
+  requirements:
+    _access: 'TRUE'
+  

@@ -57,6 +57,11 @@ field_settings:
       module:
         - commerce_product
         - commerce_product
+  created:
+    label: Created
+    datasource_id: 'entity:commerce_product'
+    property_path: created
+    type: date
 datasource_settings:
   'entity:commerce_product':
     bundles:
@@ -66,9 +71,9 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  rendered_item: {  }
-  aggregated_field: {  }
   add_url: {  }
+  aggregated_field: {  }
+  rendered_item: {  }
 tracker_settings:
   default: {  }
 options:

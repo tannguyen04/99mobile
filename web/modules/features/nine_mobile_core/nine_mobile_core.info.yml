@@ -5,6 +5,7 @@ core: 8.x
 dependencies:
   - block
   - block_content
+  - color_field
   - commerce
   - commerce_price
   - commerce_product
@@ -16,6 +17,7 @@ dependencies:
   - inline_entity_form
   - link
   - nine_mobile_node
+  - nine_mobile_product
   - node
   - options
   - paragraphs

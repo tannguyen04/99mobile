@@ -30,6 +30,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   variations:
     type: commerce_product_attributes_overview
     weight: 1
@@ -38,6 +39,7 @@ content:
       view_mode: default
       attributes: {  }
     third_party_settings: {  }
+    region: content
 hidden:
   body: true
   created: true

@@ -9,7 +9,7 @@ dependencies:
     - nine_mobile
 id: views_block__news_block_1
 theme: nine_mobile
-region: '-1'
+region: header
 weight: -5
 provider: null
 plugin: 'views_block:news-block_1'

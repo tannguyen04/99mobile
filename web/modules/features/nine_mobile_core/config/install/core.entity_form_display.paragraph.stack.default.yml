@@ -23,6 +23,7 @@ content:
       default_paragraph_type: stack_item
     third_party_settings: {  }
     type: entity_reference_paragraphs
+    region: content
   field_text:
     weight: 1
     settings:
@@ -30,6 +31,7 @@ content:
       placeholder: ''
     third_party_settings: {  }
     type: string_textfield
+    region: content
 hidden:
   created: true
   status: true

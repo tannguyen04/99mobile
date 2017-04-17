@@ -30,6 +30,7 @@ content:
       image_link: ''
     third_party_settings: {  }
     type: image
+    region: content
   field_link:
     weight: 109
     label: above
@@ -41,6 +42,7 @@ content:
       target: ''
     third_party_settings: {  }
     type: link
+    region: content
   field_number_integer:
     weight: 103
     label: above
@@ -49,6 +51,7 @@ content:
       prefix_suffix: true
     third_party_settings: {  }
     type: number_integer
+    region: content
   field_paragraphs:
     weight: 105
     label: above
@@ -57,12 +60,14 @@ content:
       link: ''
     third_party_settings: {  }
     type: entity_reference_revisions_entity_view
+    region: content
   field_summary:
     weight: 110
     label: above
     settings: {  }
     third_party_settings: {  }
     type: text_default
+    region: content
   field_tags:
     weight: 104
     label: above
@@ -70,6 +75,7 @@ content:
       link: true
     third_party_settings: {  }
     type: entity_reference_label
+    region: content
   field_text:
     weight: 107
     label: above
@@ -77,6 +83,7 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   field_text_title:
     weight: 108
     label: above
@@ -84,6 +91,10 @@ content:
       link_to_entity: false
     third_party_settings: {  }
     type: string
+    region: content
   links:
     weight: 100
+    region: content
+    settings: {  }
+    third_party_settings: {  }
 hidden: {  }

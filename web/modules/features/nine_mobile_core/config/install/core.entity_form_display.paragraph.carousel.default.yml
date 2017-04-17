@@ -22,6 +22,7 @@ content:
       form_display_mode: default
       default_paragraph_type: slide
     third_party_settings: {  }
+    region: content
 hidden:
   created: true
   status: true

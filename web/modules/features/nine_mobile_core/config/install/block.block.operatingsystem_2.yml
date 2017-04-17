@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.operating_system
+  module:
+    - facets
+    - system
+  theme:
+    - nine9_mobile
+id: operatingsystem_2
+theme: nine9_mobile
+region: featured_top
+weight: -11
+provider: null
+plugin: 'facet_block:operating_system'
+settings:
+  id: 'facet_block:operating_system'
+  label: 'Operating system'
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /dien-thoai
+    negate: false
+    context_mapping: {  }

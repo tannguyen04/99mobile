@@ -4,8 +4,15 @@ type: module
 core: 8.x
 dependencies:
   - block
+  - entity_reference_revisions
   - facets
+  - image
+  - link
   - menu_ui
+  - nine_mobile_core
   - node
   - rdf
+  - system
+  - text
+  - user
   - views

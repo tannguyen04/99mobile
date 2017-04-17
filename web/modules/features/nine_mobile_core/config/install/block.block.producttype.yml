@@ -9,7 +9,7 @@ dependencies:
     - bartik
 id: producttype
 theme: bartik
-region: '-1'
+region: header
 weight: 0
 provider: null
 plugin: 'facet_block:product_type'

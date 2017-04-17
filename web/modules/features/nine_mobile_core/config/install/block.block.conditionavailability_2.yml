@@ -1,0 +1,27 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - facets.facet.condition_availability
+  module:
+    - facets
+    - system
+  theme:
+    - nine9_mobile
+id: conditionavailability_2
+theme: nine9_mobile
+region: featured_top
+weight: -10
+provider: null
+plugin: 'facet_block:condition_availability'
+settings:
+  id: 'facet_block:condition_availability'
+  label: Condition/availability
+  provider: facets
+  label_display: visible
+visibility:
+  request_path:
+    id: request_path
+    pages: /dien-thoai
+    negate: false
+    context_mapping: {  }

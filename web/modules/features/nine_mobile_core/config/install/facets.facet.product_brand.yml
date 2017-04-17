@@ -15,10 +15,10 @@ show_only_one_result: false
 field_identifier: field_brand
 facet_source_id: 'search_api:views_page__product_index___page_1'
 widget:
-  type: checkbox
+  type: ajax_checkboxes
   config:
     show_numbers: true
-    soft_limit: 0
+    soft_limit: '0'
 query_operator: or
 use_hierarchy: false
 expand_hierarchy: false
