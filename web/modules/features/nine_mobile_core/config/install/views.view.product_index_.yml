@@ -47,7 +47,7 @@ display:
       pager:
         type: mini
         options:
-          items_per_page: 3
+          items_per_page: 4
           offset: 0
           id: 0
           total_pages: null
