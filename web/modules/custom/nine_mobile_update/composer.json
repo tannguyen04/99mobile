@@ -1,0 +1,14 @@
+{
+  "name": "drupal/nine_mobile_update",
+  "type": "drupal-module",
+  "description": "Deploy functions",
+  "keywords": ["Drupal"],
+  "license": "GPL-2.0+",
+  "homepage": "https://www.drupal.org/project/nine_mobile_update",
+  "minimum-stability": "dev",
+  "support": {
+    "issues": "https://www.drupal.org/project/issues/nine_mobile_update",
+    "source": "http://cgit.drupalcode.org/nine_mobile_update"
+  },
+  "require": { }
+}

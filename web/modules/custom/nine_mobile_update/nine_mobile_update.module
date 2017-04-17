@@ -1,0 +1,24 @@
+<?php
+
+/**
+ * @file
+ * Contains nine_mobile_update.module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+
+/**
+ * Implements hook_help().
+ */
+function nine_mobile_update_help($route_name, RouteMatchInterface $route_match) {
+  switch ($route_name) {
+    // Main module help for the nine_mobile_update module.
+    case 'help.page.nine_mobile_update':
+      $output = '';
+      $output .= '<h3>' . t('About') . '</h3>';
+      $output .= '<p>' . t('Deploy functions') . '</p>';
+      return $output;
+
+    default:
+  }
+}
