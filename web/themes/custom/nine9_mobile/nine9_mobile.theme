@@ -144,12 +144,12 @@ function nine9_mobile_preprocess_html(&$variables) {
     $variables['attributes']['class'][] = 'has-featured-top';
   }
   // Admore about layout
-  if (isset($variables['node_type'])) {
-    $node_page_full = in_array($variables['node_type'], array('landing_page', 'service'));
-    if ($node_page_full) {
-      $variables['attributes']['class'][] = 'layout-full';
-    }
-  }
+  // if (isset($variables['node_type'])) {
+  //   $node_page_full = in_array($variables['node_type'], array('landing_page', 'service'));
+  //   if ($node_page_full) {
+  //     $variables['attributes']['class'][] = 'layout-full';
+  //   }
+  // }
 }
 
 /**
@@ -158,7 +158,9 @@ function nine9_mobile_preprocess_html(&$variables) {
 function nine9_mobile_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     $node = $variables['node'];
-    if ($node->bundle() == 'landing_page') {
+    if ($node->bundle() == 'landing_page' ||
+        $node->bundle() == 'service') {
+      $variables['page']['layout_full'] = TRUE;
       unset($variables['page']['highlighted']['nine9_mobile_page_title']);
     }
   }

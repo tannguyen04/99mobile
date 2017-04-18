@@ -8,6 +8,7 @@ use Drupal\Core\Database\Connection;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Drupal\Core\Ajax\AjaxResponse;
 use Drupal\Core\Ajax\ReplaceCommand;
+use Drupal\Core\Ajax\OpenDialogCommand;
 /**
  * Class NineMobileListMobileForm.
  *
@@ -53,6 +54,7 @@ class NineMobileListMobileForm extends FormBase {
     if ($brands) {
       $brands = array_filter($brands);
     }
+    $form['#attached']['library'][] = 'core/drupal.dialog.ajax';
     //Brand
     $connection = $this->connection;
     $query = $connection->select('search_api_db_product_index', 'i');
@@ -158,7 +160,7 @@ class NineMobileListMobileForm extends FormBase {
         'condition_availability' => $condition_availability,
         'operating_system' => $operating_system
       );
-      $product_ids = $this->getProductIdsByFilter($filters);
+      //$product_ids = $this->getProductIdsByFilter($filters);
 
     }else {
 
@@ -181,14 +183,13 @@ class NineMobileListMobileForm extends FormBase {
   }
   /**
    * Ajax callback
+   * We will return Ajax command
+   * See https://api.drupal.org/api/drupal/core!core.api.php/group/ajax/8.2.x
    */
   public static function uploadAjaxCallback($form, FormStateInterface $form_state) {
-    //$view = views_embed_view('product', 'block_1');
     $response = new AjaxResponse();
-    $response->addCommand(new ReplaceCommand(
-      '#product-list',
-      '<div id="product-list">'.drupal_render($view).'</div>'));
-
+    $title = 'Hello title dialog';
+    $response->addCommand(new OpenDialogCommand('#product-list', $title, 'This is demo content'));
     return $response;
   }
 
