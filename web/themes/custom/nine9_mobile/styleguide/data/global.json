@@ -84,6 +84,10 @@
     {
       "name":"node-service",
       "group":"component"
+    },
+    {
+      "name":"product-full",
+      "group":"component"
     }
   ]
 }

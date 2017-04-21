@@ -15,3 +15,12 @@ nine_mobile_product.nine_mobile_list_mobile_form:
   requirements:
     _access: 'TRUE'
   
+
+nine_mobile_product.nine_mobile_product_select_attributes_form:
+  path: '/nine_mobile_product/form/nine_mobile_product_select_attributes'
+  defaults:
+    _form: '\Drupal\nine_mobile_product\Form\NineMobileProductSelectAttributesForm'
+    _title: 'NineMobileProductSelectAttributesForm'
+  requirements:
+    _access: 'TRUE'
+  
