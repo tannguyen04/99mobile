@@ -162,6 +162,17 @@
         background: rgb(229,187,9);
       }
     }
+
+    ul {
+      margin: 0;
+      padding: 5px;
+      overflow: hidden;
+
+      li {
+        float: left;
+        margin-left: 7px;
+      }
+    }
   }
 
   &__title {

@@ -15,4 +15,14 @@
       $('.slider').slick({});
     }
   };
+
+  Drupal.behaviors.equalHeight = {
+    attach: function (context, settings) {
+      // Equalheight navigation.
+      var $jsHeightItem = $('.product--teaser');
+      if($jsHeightItem.length) {
+        $jsHeightItem.matchHeight();
+      }
+    }
+  };
 })(jQuery, Drupal, drupalSettings);
