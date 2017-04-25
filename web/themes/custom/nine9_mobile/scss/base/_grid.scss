@@ -156,6 +156,7 @@ $susy-media: (
 
     .grid__item {
       @include susy-media(tablet) {
+        display: flex;
         width: 100%/$i;
         > div {
           min-height: 100%;
