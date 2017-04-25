@@ -45,6 +45,9 @@
       <div id="main" class="layout-main {{ page.layout_full ? '' : 'container' }} clearfix">
         {{ page.breadcrumb }}
         <main id="content" class="column main-content" role="main">
+          <section class="section main-content__top container ">
+            {{ page.content_top }}
+          </section>
           <section class="section">
             <a id="main-content" tabindex="-1"></a>
             {{ page.content }}

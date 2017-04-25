@@ -159,7 +159,10 @@ embed {
 }
 
 textarea,
-input {
+input[type='submit'],
+input[type='text'],
+input[type='email'],
+input[type='number'] {
   appearance: none;
   box-shadow: none;
   box-sizing: border-box;
