@@ -66,7 +66,7 @@ class NineMobileListMobileForm extends FormBase {
     $options = array();
     while($record = $result->fetchAssoc()) {
       $term = \Drupal\taxonomy\Entity\Term::load($record['field_brand']);
-      $options[$term->id()] = $term->getName() . ' ('. $record['count'] .')';
+      $options[$term->id()] = $term->getName();
     }
     $form['brands'] = array(
       '#type' => 'checkboxes',
@@ -91,7 +91,7 @@ class NineMobileListMobileForm extends FormBase {
     $result = $query->execute();
     while($record = $result->fetchAssoc()) {
       //$term = \Drupal\taxonomy\Entity\Term::load($record['color_name']);
-      $options[$record['color_name']] = $record['color_name'] . ' ('. $record['count'] .')';
+      $options[$record['color_name']] = $record['color_name'];
     }
     $form['colors'] = array(
       '#type' => 'checkboxes',
@@ -116,7 +116,7 @@ class NineMobileListMobileForm extends FormBase {
     $result = $query->execute();
     while($record = $result->fetchAssoc()) {
       $term = \Drupal\taxonomy\Entity\Term::load($record['field_operating_system']);
-      $options[$term->id()] = $term->getName() . ' ('. $record['count'] .')';
+      $options[$term->id()] = $term->getName();
     }
     $form['operating_system'] = array(
       '#type' => 'checkboxes',
@@ -141,7 +141,7 @@ class NineMobileListMobileForm extends FormBase {
     $result = $query->execute();
     while($record = $result->fetchAssoc()) {
       $term = \Drupal\taxonomy\Entity\Term::load($record['field_condition_availability']);
-      $options[$term->id()] = $term->getName() . ' ('. $record['count'] .')';
+      $options[$term->id()] = $term->getName();
     }
     $form['condition_availability'] = array(
       '#type' => 'checkboxes',
@@ -170,15 +170,22 @@ class NineMobileListMobileForm extends FormBase {
     //Default
 
     //$view = \Drupal::service('renderer')->render($view);
-    $form['product_list'] = array(
-      '#type' => 'container',
-      '#attributes' => array(
-        'class' => 'accommodation',
-        'id' => 'product-list',
-      ),
-      'content' => $view,
+    // $form['product_list'] = array(
+    //   '#type' => 'container',
+    //   '#attributes' => array(
+    //     'class' => 'accommodation',
+    //     'id' => 'product-list',
+    //   ),
+    //   'content' => $view,
 
+    // );
+
+
+
+    $filters = array(
+      'brands' => array('8')
     );
+    $product_ids = $this->getProductIdsByFilter($filters);
     return $form;
   }
   /**
@@ -197,16 +204,16 @@ class NineMobileListMobileForm extends FormBase {
     $connection = $this->connection;
     $query = $connection->select('search_api_db_product_index', 'i');
     $query->fields('i', array('item_id'));
-    if ($filters['brands']) {
+    if (isset($filters['brands'])) {
       $query->condition('i.field_brand', $filters['brands'] , 'IN');
     }
-    if ($filters['colors']) {
+    if (isset($filters['colors'])) {
       $query->condition('i.color_name', $filters['brands'] , 'IN');
     }
-    if ($filters['condition_availability']) {
+    if (isset($filters['condition_availability'])) {
       $query->condition('i.field_condition_availability', $filters['condition_availability'] , 'IN');
     }
-    if ($filters['operating_system']) {
+    if (isset($filters['operating_system'])) {
       $query->condition('i.field_operating_system', $filters['operating_system'] , 'IN');
     }
     $query->condition('i.type', 'mobile' , '=');
