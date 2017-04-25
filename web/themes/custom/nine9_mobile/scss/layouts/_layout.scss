@@ -57,7 +57,8 @@ body {
 }
 
 .region-content-top {
-  padding: 20px;
+  @extend %clearfix;
+  padding: 40px 20px 0;
 
   .block-facets {
     margin-bottom: 20px;
