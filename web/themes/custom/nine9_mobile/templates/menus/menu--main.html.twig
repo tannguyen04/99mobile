@@ -46,7 +46,7 @@
       <li{{ item.attributes.addClass(classes) }}>
         {% set title = item.title|split('|') %}
         {% if menu_level == 0 %}
-        <a href="#">
+        <a href="{{ item.url }}">
           <dl>
             <dt>{{title.0}}</dt>
             <dd>{{title.1}}</dd>
