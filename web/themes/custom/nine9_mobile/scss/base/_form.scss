@@ -36,3 +36,7 @@ input[type='submit'] {
     color: $text-color;
   }
 }
+
+input[type='checkbox'] {
+  border: rem(1px) solid $gray-c2;
+}

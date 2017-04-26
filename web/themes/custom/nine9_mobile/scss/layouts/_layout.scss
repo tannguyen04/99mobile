@@ -55,3 +55,54 @@ body {
 .primary-menu {
   background: $gray-f9;
 }
+
+.region-content-top {
+  @extend %clearfix;
+  padding: 40px 20px 0;
+
+  .block-facets {
+    margin-bottom: 20px;
+
+    @include susy-media(tablet) {
+      width: 33.33%;
+      float: left;
+      margin-bottom: 0;
+    }
+
+    @include susy-media(desktop) {
+      width: 25%;
+    }
+
+    h2 {
+      font-size: 18px;
+      margin-bottom: 14px;
+      color: $blue-02;
+
+      @include susy-media(tablet) {
+        margin-bottom: 20px;
+      }
+    }
+  }
+}
+
+.facet-item {
+  @extend %clearfix;
+  margin-bottom: 10px;
+
+  input {
+    float: left;
+    margin-right: 10px;
+  }
+
+  label {
+    font-size: 16px;
+    line-height: 1;
+    color: #032b5a;
+    cursor: pointer;
+    font-weight: normal;
+
+    &:hover {
+      color: $blue;
+    }
+  }
+}

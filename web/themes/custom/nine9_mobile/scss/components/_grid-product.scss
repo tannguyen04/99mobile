@@ -1,9 +1,8 @@
 .product {
-  padding: 30px 30px 0;
+  padding: 30px;
   position: relative;
   background: $gray-ef;
   margin-top: 30px;
-  height: auto !important;
 
   &__status {
     position: absolute;
@@ -64,10 +63,14 @@
   }
 
   &__action-links {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+
     a {
       display: block;
       padding: 12px 18px 12px 55px;
-      margin: 0 -30px;
       height: 40px;
       cursor: pointer;
       color: $blue_slider;
