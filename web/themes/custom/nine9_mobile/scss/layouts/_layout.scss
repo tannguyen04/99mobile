@@ -29,7 +29,7 @@ body {
 
 .site-footer {
   background-image: linear-gradient(to bottom,$blue_dark 0,$blue_light 100%);
-  color: $white;
+  color: $gray-e3;
   font-size: 12px;
   font-weight: bold;
   padding: 30px 0 20px;
@@ -77,6 +77,10 @@ body {
           &:hover {
             color: $white;
           }
+
+          &.is-active {
+            color: $gray-e3;
+          }
         }
       }
     }
@@ -110,6 +114,26 @@ body {
 
   .container {
     background: url('../images/footer-bubbles.png') no-repeat scroll bottom right transparent;
+  }
+}
+
+.menu--footer {
+  @extend %clearfix;
+  margin-bottom: 15px;
+
+  ul {
+    margin: 0;
+
+    li {
+      float: left;
+      margin-right: 20px;
+
+      a {
+        &:hover {
+          color: $white;
+        }
+      }
+    }
   }
 }
 
