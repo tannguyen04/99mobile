@@ -27,3 +27,4 @@ dependencies:
   post:
     - echo "Tan"
 test:
+  override:
