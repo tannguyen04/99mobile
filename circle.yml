@@ -26,3 +26,4 @@ dependencies:
     - ~/.composer/cache
   post:
     - echo "Tan"
+test:
