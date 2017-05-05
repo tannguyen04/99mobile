@@ -45,7 +45,8 @@
         "drupal/media_entity_image": "^1.2",
         "drupal/file_browser": "^1.0@alpha",
         "drupal/color_field": "2.x-dev",
-        "drupal/addtoany": "^1.8"
+        "drupal/addtoany": "^1.8",
+        "drupal/bootstrap": "^3.3"
     },
     "require-dev": {
         "behat/mink": "~1.7",
