@@ -25,4 +25,15 @@
       }
     }
   };
+
+  Drupal.behaviors.slideImage = {
+    attach: function (context, settings) {
+      $('.product__images__carousel').slick({
+        infinite: true,
+        dots: true,
+        slidesToShow: 3,
+        slidesToScroll: 1
+      });
+    }
+  };
 })(jQuery, Drupal, drupalSettings);

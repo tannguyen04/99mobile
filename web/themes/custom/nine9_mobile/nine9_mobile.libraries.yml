@@ -21,3 +21,8 @@ matchHeight:
   version: VERSION
   js:
     js/lib/jquery.matchHeight-min.js: {}
+
+slick:
+  version: VERSION
+  js:
+    js/lib/slick.min.js: {}

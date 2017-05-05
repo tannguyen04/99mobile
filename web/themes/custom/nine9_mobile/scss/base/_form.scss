@@ -40,3 +40,9 @@ input[type='submit'] {
 input[type='checkbox'] {
   border: rem(1px) solid $gray-c2;
 }
+
+select {
+  &:focus {
+    outline: none;
+  }
+}
