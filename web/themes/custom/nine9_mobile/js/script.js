@@ -36,4 +36,16 @@
       });
     }
   };
+
+  Drupal.behaviors.showGallery = {
+    attach: function (context, settings) {
+      $('.js-show-gallery').on('touchstart click', function (e) {
+        $('.product__slide').toggleClass('is-active');
+      });
+      
+      $('.js-close i').on('touchstart click', function (e) {
+        $('.product__slide').toggleClass('is-active');
+      });
+    }
+  };
 })(jQuery, Drupal, drupalSettings);

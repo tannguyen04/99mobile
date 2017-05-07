@@ -192,10 +192,10 @@
   &--full {
     @extend %clearfix;
     margin-top: 0;
-    color: $white;
     padding: 2.5rem 1.25rem 0;
     position: relative;
     z-index: 15;
+    overflow: hidden;
 
     &:before {
       position: absolute;
@@ -221,11 +221,30 @@
 
       &__slide {
         position: absolute;
-        top: 0;
+        top: -400px;
         left: 0;
         right: 0;
         overflow: hidden;
         background-color: #000;
+        transition: .2s;
+        opacity: 0;
+
+        &.is-active {
+          top: 0;
+          transition: .2s;
+          opacity: 1;
+        }
+
+        .close {
+          font-size: 25px;
+          padding: 4px 10px;
+          text-align: right;
+          color: $white;
+
+          i {
+            cursor: pointer;
+          }
+        }
       }
 
       &__images {
@@ -244,7 +263,7 @@
             max-width: inherit;
           }
 
-          a {
+          .gallery {
             background-image: url("../images/icons-sprite.png");
             background-position: 0 -199px;
             background-repeat: no-repeat;
@@ -255,6 +274,7 @@
             height: 2.125rem;
             line-height: 2.125rem;
             padding: 0 0 0 2.125rem;
+            cursor: pointer;
           }
         }
       }
@@ -298,7 +318,6 @@
       &__title {
         font-size: 2.125rem;
         margin-bottom: 1rem;
-        color: $white;
       }
 
       &__price {
@@ -312,6 +331,7 @@
       &__content-top {
         @extend %clearfix;
         margin-bottom: 50px;
+        color: $white;
 
         &__content {
           overflow: hidden;
@@ -342,6 +362,15 @@
       &__avaiable {
         color: #032b5a;
         font-size: 14px;
+      }
+
+      &__detail {
+        background-color: #F8F8F8;
+
+        .paragraph__content {
+          padding: 0;
+          margin: 0 -10px;
+        }
       }
     }
   }
@@ -405,6 +434,11 @@
     float: left;
     padding: 0.3125rem 15px;
 
+    &.title {
+      font-weight: bold;
+      padding-left: 0;
+    }
+
     &:first-child {
       border-left: 0;
     }
@@ -415,7 +449,7 @@
   }
 }
 
-.bg-gray {
+.bg-gray-shadow {
   background: #ececec none repeat scroll 0 0;
   box-shadow: 0 1px 5px 0 #d0d0d0 inset;
   color: #032b5a;
