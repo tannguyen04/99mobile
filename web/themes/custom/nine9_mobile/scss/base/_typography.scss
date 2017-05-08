@@ -123,11 +123,18 @@ th, td {
 
 
 .layout-main-wrapper {
-  ul {
+  ul,
+  ol {
     li {
-      list-style: outside none disc;
+      list-style: outside;
       margin-bottom: 10px;
       margin-left: 15px;
+    }
+  }
+
+  ol {
+    li {
+      list-style: outside none number;
     }
   }
 }
