@@ -120,3 +120,14 @@ th, td {
   text-align: left;
   padding: 4px;
 }
+
+
+.layout-main-wrapper {
+  ul {
+    li {
+      list-style: outside none disc;
+      margin-bottom: 10px;
+      margin-left: 15px;
+    }
+  }
+}

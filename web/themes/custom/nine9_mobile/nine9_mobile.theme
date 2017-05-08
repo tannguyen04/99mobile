@@ -13,6 +13,7 @@ function nine9_mobile_preprocess_node(&$variables) {
         $items[] = $value;
       }
     }
+
     $variables['content']['field_tags'] = array(
       '#theme' => 'item_list',
       '#items' => $items,
