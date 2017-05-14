@@ -1,0 +1,14 @@
+langcode: en
+status: true
+dependencies: {  }
+name: news
+label: News
+effects:
+  918ee32f-7ad0-4ca5-a9b6-a85188d4fb5f:
+    uuid: 918ee32f-7ad0-4ca5-a9b6-a85188d4fb5f
+    id: image_scale
+    weight: 1
+    data:
+      width: 800
+      height: null
+      upscale: false

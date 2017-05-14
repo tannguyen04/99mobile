@@ -4,13 +4,16 @@ type: module
 core: 8.x
 dependencies:
   - block
+  - block_visibility_groups
   - entity_reference_revisions
   - facets
+  - field
   - image
   - link
   - menu_ui
   - nine_mobile_core
   - node
+  - path
   - rdf
   - system
   - text

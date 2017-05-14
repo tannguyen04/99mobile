@@ -1,0 +1,62 @@
+langcode: en
+status: true
+dependencies:
+  config:
+    - field.field.node.landing_service.body
+    - field.field.node.landing_service.field_image
+    - field.field.node.landing_service.field_node_reference
+    - field.field.node.landing_service.field_service_ref
+    - image.style.news
+    - node.type.landing_service
+  module:
+    - image
+    - text
+    - user
+id: node.landing_service.default
+targetEntityType: node
+bundle: landing_service
+mode: default
+content:
+  addtoany:
+    weight: 5
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+  body:
+    label: hidden
+    type: text_default
+    weight: 1
+    settings: {  }
+    third_party_settings: {  }
+    region: content
+  field_image:
+    weight: 3
+    label: hidden
+    settings:
+      image_style: news
+      image_link: ''
+    third_party_settings: {  }
+    type: image
+    region: content
+  field_node_reference:
+    weight: 2
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_service_ref:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  links:
+    weight: 0
+    region: content
+    settings: {  }
+    third_party_settings: {  }
+hidden: {  }

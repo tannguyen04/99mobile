@@ -1,5 +1,5 @@
 langcode: en
-status: true
+status: false
 dependencies:
   config:
     - system.menu.social-menu
@@ -9,7 +9,7 @@ dependencies:
     - nine_mobile
 id: socialmenu
 theme: nine_mobile
-region: footer_third
+region: ''
 weight: -9
 provider: null
 plugin: 'system_menu_block:social-menu'

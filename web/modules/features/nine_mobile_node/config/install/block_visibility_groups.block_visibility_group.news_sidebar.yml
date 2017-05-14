@@ -1,0 +1,25 @@
+langcode: en
+status: true
+dependencies:
+  module:
+    - node
+    - system
+id: news_sidebar
+label: 'News Sidebar'
+logic: or
+conditions:
+  929bcb50-b5c8-4fe1-a008-ab6e0c41d1a6:
+    id: node_type
+    bundles:
+      article: article
+    negate: false
+    context_mapping:
+      node: '@node.node_route_context:node'
+    uuid: 929bcb50-b5c8-4fe1-a008-ab6e0c41d1a6
+  92c6154b-7007-43b2-90c3-42bcf6bb3da4:
+    id: request_path
+    pages: /tin-cong-nghe
+    negate: false
+    context_mapping: {  }
+    uuid: 92c6154b-7007-43b2-90c3-42bcf6bb3da4
+allow_other_conditions: false

@@ -85,38 +85,21 @@
 <article{{ attributes.addClass(classes) }}>
   {{ title_prefix }}
   {{ title_suffix }}
-  <div class="banner">
-    <div class="banner__image">
-      {{ content.field_image }}
-    </div>
-    <div class="banner__content container">
-      <div class="banner__content__inner">
-        <div class="banner__title">
-          {{ content.field_text }}
-        </div>
-        <div class="banner__description">
-          {{ content.field_text_title }}
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="container">
+  {{ content.field_image }}
   <div class="add-to-any">
     {{ content.addtoany }}
   </div>
-  </div>
+  <h1{{ title_attributes.addClass('node-service__title') }}>
+    {{ label }}
+  </h1>
   <div class="service__summary">
-    <div class="container">
-      <div class="service__content">
-        {{ content.field_summary }}
-      </div>
-      <div class="service__price">
-        {{ content.field_number_integer }}
-      </div>
+    <div class="service__content">
+      {{ content.field_summary }}
+    </div>
+    <div class="service__price">
+      {{ content.field_number_integer }}
     </div>
   </div>
-  {{ content.field_paragraphs }}
-  <div class="container">
-    {{ content.field_tags }}
-  </div>
+  {{ content.body }}
+  {{ content.field_tags }}
 </article>
