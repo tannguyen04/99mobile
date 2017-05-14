@@ -71,9 +71,9 @@ datasource_settings:
       default: true
       selected: {  }
 processor_settings:
-  add_url: {  }
-  aggregated_field: {  }
   rendered_item: {  }
+  aggregated_field: {  }
+  add_url: {  }
 tracker_settings:
   default: {  }
 options:

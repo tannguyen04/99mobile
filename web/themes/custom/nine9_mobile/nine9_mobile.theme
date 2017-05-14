@@ -159,9 +159,14 @@ function nine9_mobile_preprocess_html(&$variables) {
 function nine9_mobile_preprocess_page(&$variables) {
   if (isset($variables['node'])) {
     $node = $variables['node'];
-    if ($node->bundle() == 'landing_page' ||
-        $node->bundle() == 'service') {
+    if ($node->bundle() == 'landing_page') {
       $variables['page']['layout_full'] = TRUE;
+    }
+    if ($node->bundle() == 'landing_page' ||
+        $node->bundle() == 'service' ||
+        $node->bundle() == 'article' ||
+        $node->bundle() == 'landing_service') {
+
       unset($variables['page']['highlighted']['nine9_mobile_page_title']);
     }
   }

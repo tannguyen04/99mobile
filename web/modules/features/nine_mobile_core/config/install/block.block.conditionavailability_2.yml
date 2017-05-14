@@ -10,13 +10,13 @@ dependencies:
     - nine9_mobile
 id: conditionavailability_2
 theme: nine9_mobile
-region: featured_top
-weight: -10
+region: content_top
+weight: -11
 provider: null
 plugin: 'facet_block:condition_availability'
 settings:
   id: 'facet_block:condition_availability'
-  label: Condition/availability
+  label: 'Chất lượng'
   provider: facets
   label_display: visible
 visibility:

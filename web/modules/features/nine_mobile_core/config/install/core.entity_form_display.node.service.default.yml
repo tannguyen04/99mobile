@@ -2,20 +2,16 @@ langcode: en
 status: true
 dependencies:
   config:
+    - field.field.node.service.body
     - field.field.node.service.field_image
-    - field.field.node.service.field_link
     - field.field.node.service.field_number_integer
-    - field.field.node.service.field_paragraphs
+    - field.field.node.service.field_service_ref
     - field.field.node.service.field_summary
     - field.field.node.service.field_tags
-    - field.field.node.service.field_text
-    - field.field.node.service.field_text_title
     - image.style.thumbnail
     - node.type.service
   module:
     - image
-    - link
-    - paragraphs
     - path
     - text
 id: node.service.default
@@ -23,6 +19,15 @@ targetEntityType: node
 bundle: service
 mode: default
 content:
+  body:
+    weight: 9
+    settings:
+      rows: 9
+      summary_rows: 3
+      placeholder: ''
+    third_party_settings: {  }
+    type: text_textarea_with_summary
+    region: content
   created:
     type: datetime_timestamp
     weight: 2
@@ -37,35 +42,21 @@ content:
     third_party_settings: {  }
     type: image_image
     region: content
-  field_link:
-    weight: 9
-    settings:
-      placeholder_url: ''
-      placeholder_title: ''
-    third_party_settings: {  }
-    type: link_default
-    region: content
   field_number_integer:
-    weight: 11
+    weight: 8
     settings:
       placeholder: ''
     third_party_settings: {  }
     type: number
     region: content
-  field_paragraphs:
-    weight: 12
-    settings:
-      title: Paragraph
-      title_plural: Paragraphs
-      edit_mode: closed
-      add_mode: dropdown
-      form_display_mode: default
-      default_paragraph_type: _none
+  field_service_ref:
+    weight: 10
+    settings: {  }
     third_party_settings: {  }
-    type: entity_reference_paragraphs
+    type: options_select
     region: content
   field_summary:
-    weight: 10
+    weight: 7
     settings:
       rows: 5
       placeholder: ''
@@ -73,29 +64,13 @@ content:
     type: text_textarea
     region: content
   field_tags:
-    weight: 13
+    weight: 11
     settings:
       match_operator: CONTAINS
       size: 60
       placeholder: ''
     third_party_settings: {  }
     type: entity_reference_autocomplete_tags
-    region: content
-  field_text:
-    weight: 7
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
-    region: content
-  field_text_title:
-    weight: 8
-    settings:
-      size: 60
-      placeholder: ''
-    third_party_settings: {  }
-    type: string_textfield
     region: content
   path:
     type: path

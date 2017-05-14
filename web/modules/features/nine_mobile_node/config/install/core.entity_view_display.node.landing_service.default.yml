@@ -2,60 +2,60 @@ langcode: en
 status: true
 dependencies:
   config:
-    - field.field.node.article.body
-    - field.field.node.article.field_category
-    - field.field.node.article.field_image
-    - field.field.node.article.field_tags
+    - field.field.node.landing_service.body
+    - field.field.node.landing_service.field_image
+    - field.field.node.landing_service.field_node_reference
+    - field.field.node.landing_service.field_service_ref
     - image.style.news
-    - node.type.article
+    - node.type.landing_service
   module:
     - image
     - text
     - user
-id: node.article.default
+id: node.landing_service.default
 targetEntityType: node
-bundle: article
+bundle: landing_service
 mode: default
 content:
   addtoany:
     weight: 5
+    region: content
     settings: {  }
     third_party_settings: {  }
-    region: content
   body:
+    label: hidden
     type: text_default
-    weight: 0
+    weight: 1
     settings: {  }
     third_party_settings: {  }
-    label: hidden
-    region: content
-  field_category:
-    weight: 101
-    label: hidden
-    settings:
-      link: true
-    third_party_settings: {  }
-    type: entity_reference_label
     region: content
   field_image:
-    type: image
-    weight: -1
+    weight: 3
+    label: hidden
     settings:
       image_style: news
       image_link: ''
     third_party_settings: {  }
-    label: hidden
+    type: image
     region: content
-  field_tags:
-    type: entity_reference_label
-    weight: 10
+  field_node_reference:
+    weight: 2
     label: hidden
     settings:
       link: true
     third_party_settings: {  }
+    type: entity_reference_label
+    region: content
+  field_service_ref:
+    weight: 4
+    label: hidden
+    settings:
+      link: true
+    third_party_settings: {  }
+    type: entity_reference_label
     region: content
   links:
-    weight: 100
+    weight: 0
     region: content
     settings: {  }
     third_party_settings: {  }

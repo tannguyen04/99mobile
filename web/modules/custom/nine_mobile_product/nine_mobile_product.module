@@ -23,3 +23,42 @@ function nine_mobile_product_help($route_name, RouteMatchInterface $route_match)
   }
 }
 
+/**
+ *
+ */
+
+function nine_mobile_product_views_pre_build($view) {
+  if ($view->current_display == 'block_2' &&
+     $view->id() == 'service') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node) {
+      $nid = $node->id();
+      if ($node->bundle() == 'service') {
+        $query = \Drupal::database()->select('node__field_node_reference', 'nr');
+        $query->fields('nr', array('entity_id'));
+        $query->condition('nr.bundle', 'landing_service', '=');
+        $query->condition('nr.field_node_reference_target_id', $nid, '=');
+        $result = $query->execute()->fetchAll();
+        $ids = array();
+        foreach ($result as $key => $value) {
+          $ids[] = $value->entity_id;
+        }
+        $query = \Drupal::database()->select('node__field_node_reference', 'nr');
+        $query->fields('nr', array('field_node_reference_target_id'));
+        $query->condition('nr.bundle', 'landing_service', '=');
+        $query->condition('nr.entity_id', $ids, 'IN');
+        $result = $query->execute()->fetchAll();
+        $ids = array();
+        foreach ($result as $key => $value) {
+          if ($value->field_node_reference_target_id == $nid) {
+            continue;
+          }
+          $ids[] = $value->field_node_reference_target_id;
+        }
+        $ids = implode('+', $ids);
+        $args = array($ids);
+        $view->setArguments($args);
+      }
+    }
+  }
+}

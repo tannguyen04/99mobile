@@ -73,12 +73,13 @@
 {%
   set classes = [
     'node',
+    'node-news',
+    'news--full',
     'node--type-' ~ node.bundle|clean_class,
     node.isPromoted() ? 'node--promoted',
     node.isSticky() ? 'node--sticky',
     not node.isPublished() ? 'node--unpublished',
-    view_mode ? 'node--view-mode-' ~ view_mode|clean_class,
-    'node--service--full',
+    view_mode ? 'node--view-mode-' ~ view_mode|clean_class
   ]
 %}
 {{ attach_library('classy/node') }}
@@ -89,17 +90,15 @@
   <div class="add-to-any">
     {{ content.addtoany }}
   </div>
-  <h1{{ title_attributes.addClass('node-service__title') }}>
+  <ul class="node-news__submitted">
+    <li>{% trans %}Post by {{ author_name }}</li>
+    <li>on {{ date }}{% endtrans %}
+    {{ metadata }}</li>
+  </ul>
+  <h1{{ title_attributes.addClass('node-news__title') }}>
     {{ label }}
   </h1>
-  <div class="service__summary">
-    <div class="service__content">
-      {{ content.field_summary }}
-    </div>
-    <div class="service__price">
-      {{ content.field_number_integer }}
-    </div>
-  </div>
+  {{ content.field_category }}
   {{ content.body }}
   {{ content.field_tags }}
 </article>
