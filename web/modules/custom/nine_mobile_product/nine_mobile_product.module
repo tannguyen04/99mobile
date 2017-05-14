@@ -43,6 +43,9 @@ function nine_mobile_product_views_pre_build($view) {
         foreach ($result as $key => $value) {
           $ids[] = $value->entity_id;
         }
+        if (!empty($ids)) {
+          return;
+        }
         $query = \Drupal::database()->select('node__field_node_reference', 'nr');
         $query->fields('nr', array('field_node_reference_target_id'));
         $query->condition('nr.bundle', 'landing_service', '=');
