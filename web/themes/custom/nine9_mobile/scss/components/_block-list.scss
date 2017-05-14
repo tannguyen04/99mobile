@@ -81,11 +81,54 @@
 
   &__submitted {
      @extend %clearfix;
+    margin-bottom: 10px;
 
     li {
       float: left;
-      margin-right: 20px;
+      margin-right: 5px;
       font-size: 14px;
+      color: #3a97cd;
+      font-weight: lighter;
+      font-weight: bold;
     }
+  }
+
+
+  .field--name-field-image {
+    margin-bottom: 20px;
+  }
+}
+
+.add-to-any {
+  margin-bottom: 20px;
+}
+
+
+.field--name-field-tags {
+  .field__item {
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.caption-img {
+  background: #f1f1f1 none repeat scroll 0 0;
+  border: medium none;
+  border-radius: 0;
+  color: #888;
+  font-size: 14px;
+  line-height: 18px;
+  margin-bottom: 20px;
+  padding: 4px;
+  text-align: center;
+  display: block;
+
+  > figcaption {
+    display: block;
+  }
+
+  img {
+    width: 100%;
+    height: auto;
   }
 }

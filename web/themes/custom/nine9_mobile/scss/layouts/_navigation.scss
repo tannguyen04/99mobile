@@ -190,6 +190,8 @@
 
 	> .has-submenu {
 		@extend %icon-submenu;
+  	padding-right: 0;
+		
 		&:after {
 			display: none;
 		}

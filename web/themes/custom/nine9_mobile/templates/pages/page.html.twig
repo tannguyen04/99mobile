@@ -42,7 +42,7 @@
       </div>
     {% endif %}
     <div id="main-wrapper" class="layout-main-wrapper layout-container clearfix">
-      <div id="main" class="layout-main {{ page.layout_full ? '' : 'container' }} clearfix">
+      <div id="main" class="layout-main {{ page.layout_full ? '' : 'container' }} clearfix {% if page.sidebar_second %}has-sidebar{% endif %}">
         {{ page.breadcrumb }}
         <main id="content" class="column main-content" role="main">
           <section class="section main-content__top container ">
