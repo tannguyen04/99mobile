@@ -78,6 +78,20 @@
     }
   };
 
+  Drupal.behaviors.toggleSubMenu = {
+    attach: function (context, settings) {
+      $('.has-submenu').prepend('<span class="js-toggle--sub toggle-button"></span>');
+      $('.js-toggle--sub').click(function(){
+        if($(this).hasClass("active")) {
+          $(this).removeClass("active");
+        }
+        else {
+          $(this).addClass("active");
+        }
+      })
+    }
+  };
+
   Drupal.behaviors.showGallery = {
     attach: function (context, settings) {
       $('.js-show-gallery').on('touchstart click', function (e) {
