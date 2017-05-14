@@ -37,6 +37,19 @@
     }
   };
 
+  Drupal.behaviors.menuButton = {
+    attach: function (context, settings) {
+      $('.js-menu-button').click(function(){
+        if($(this).hasClass("active")) {
+          $(this).removeClass("active");
+        }
+        else {
+          $(this).addClass("active");
+        }
+      })
+    }
+  };
+
   Drupal.behaviors.showGallery = {
     attach: function (context, settings) {
       $('.js-show-gallery').on('touchstart click', function (e) {

@@ -17,10 +17,6 @@
   ],
   "list_components":[
     {
-      "name":"product-full",
-      "group":"component"
-    },
-    {
       "name":"nav-primary",
       "group":"component"
     },
