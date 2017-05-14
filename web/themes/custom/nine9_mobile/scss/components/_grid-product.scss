@@ -204,10 +204,14 @@
       right: 0;
       background-color: #147ab4;
       background-image: -moz-linear-gradient(center top , #102753, #147ab4);
-      height: 380px;
+      height: 280px;
       content: '';
       width: 100%;
       z-index: -1;
+
+      @include susy-media(tablet) {
+        height: 380px;
+      }
     }
 
     
@@ -248,8 +252,10 @@
       }
 
       &__images {
-        float: left;
-        width: 50%;
+        @include susy-media(tablet) {
+          float: left;
+          width: 50%;
+        }
 
         &__carousel {
           }
@@ -259,8 +265,12 @@
 
           img {
             max-height: 430px;
-            width: auto;
+            width: 100%;
             max-width: inherit;
+
+            @include susy-media(desktop) {
+              width: auto;
+            }
           }
 
           .gallery {
@@ -280,7 +290,9 @@
       }
 
       &__price-info {
-        color: $white;
+        @include susy-media(tablet) {
+          color: $white;
+        }
 
         label {
           font-size: 15px;
@@ -330,8 +342,12 @@
 
       &__content-top {
         @extend %clearfix;
-        margin-bottom: 50px;
-        color: $white;
+        margin-bottom: 20px;
+
+        @include susy-media(tablet) {
+          color: $white;
+          margin-bottom: 50px;
+        }
 
         &__content {
           overflow: hidden;
@@ -371,6 +387,13 @@
           padding: 0;
           margin: 0 -10px;
         }
+
+        h2.title {
+          display: inline-block;
+          width: 100%;
+          margin-top: 15px;
+          font-size: 20px;
+        }
       }
     }
   }
@@ -386,12 +409,22 @@
   padding-top: 20px;
 
   li {
-    float: left;
     padding-left: 52px;
     padding-right: 20px;
     position: relative;
-    width: 25%;
     font-family: Frutiger55,sans-serif;
+    margin: 15px 0;
+
+    @include susy-media(tablet) {
+      width: 50%;
+      float: left;
+      margin: 15px 0;
+    }
+
+    @include susy-media(desktop) {
+      width: 25%;
+      margin: 0;
+    }
 
     &:before {
       position: absolute;
