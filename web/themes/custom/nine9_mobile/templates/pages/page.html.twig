@@ -4,6 +4,29 @@
   'title' : 'Home page'
 }
 %}
+{% set mainMenu = [
+  {
+    'title' : 'Shop',
+    'text' : 'Phones, tariffs, tablets, accessories',
+    'link' : '#',
+  },
+  {
+    'title' : 'More for you',
+    'text' : 'More perks, services, connected, flexibility ',
+    'link' : '#'
+  },
+  {
+    'title' : 'Connectivity',
+    'text' : 'Phones, tariffs, tablets, accessories',
+    'link' : '#'
+  },
+  {
+    'title' : 'Apps',
+    'text' : 'Phones, tariffs, tablets, accessories',
+    'link' : '#'
+  }
+]
+%}
 <div id="page-wrapper">
   <div id="page">
     <header id="header" class="header" role="banner" aria-label="{{ 'Site header'|t }}">
@@ -21,7 +44,15 @@
                   <img src="{{ logo.src }}" alt="{{ logo.title }}" />
                 </a>
               </div>
-              {{ page.primary_menu }}
+              <div class="menu-button js-menu-button">
+                <span class="menu-button__item"></span>
+                <span class="menu-button__item"></span>
+                <span class="menu-button__item"></span>
+              </div>
+              <div id="main-menu">
+                {{ page.primary_menu.nine9_mobile_main_menu }}
+              </div>
+
             </div>
           </div>
         </div>

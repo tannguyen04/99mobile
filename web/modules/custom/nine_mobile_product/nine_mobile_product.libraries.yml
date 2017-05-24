@@ -5,3 +5,10 @@ ajax-facet-checkboxes:
   dependencies:
     - core/jquery
     - core/drupalSettings
+mobile_product_select_attributes:
+  version: 1.x
+  js:
+    js/mobile_product_select_attributes.js: {}
+  dependencies:
+    - core/jquery
+    - core/drupalSettings

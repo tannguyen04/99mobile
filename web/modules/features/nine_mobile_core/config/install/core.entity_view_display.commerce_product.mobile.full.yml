@@ -14,9 +14,9 @@ dependencies:
     - field.field.commerce_product.mobile.stores
     - field.field.commerce_product.mobile.variations
   module:
-    - commerce_product
     - entity_reference_revisions
     - image
+    - nine_mobile_product
     - text
 id: commerce_product.mobile.full
 targetEntityType: commerce_product
@@ -56,11 +56,10 @@ content:
     third_party_settings: {  }
     region: content
   variations:
-    type: commerce_add_to_cart
+    type: nine_mobile_product_variant_field_formatter
     weight: 1
     label: hidden
-    settings:
-      combine: true
+    settings: {  }
     third_party_settings: {  }
     region: content
 hidden:

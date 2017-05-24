@@ -170,6 +170,11 @@ function nine9_mobile_preprocess_page(&$variables) {
       unset($variables['page']['highlighted']['nine9_mobile_page_title']);
     }
   }
+  $product = \Drupal::routeMatch()->getParameter('commerce_product');
+  if ($product) {
+    unset($variables['page']['highlighted']['nine9_mobile_page_title']);
+    $variables['page']['layout_full'] = TRUE;
+  }
 }
 
 /**
@@ -221,7 +226,16 @@ function nine9_mobile_preprocess_commerce_product(&$variables) {
   $field_paragraphs_view = $field_paragraphs->view();
   $scrollspy_build = array(
     '#theme' => 'item_list',
+    '#attributes' => array(
+      'class' => array('info-links-list')
+    ),
   );
+  if ($number_rows) {
+    $scrollspy_build['#items'][] = array(
+      '#markup' => render($variables['product']['title'][0]),
+      '#wrapper_attributes' => array('class' => array('title'))
+    );
+  }
   for ($i = 0; $i < $number_rows; $i++){
     $paragraph = $field_paragraphs_view[$i]['#paragraph'];
     $title = $paragraph->get('field_text')->first();
@@ -230,6 +244,12 @@ function nine9_mobile_preprocess_commerce_product(&$variables) {
       $title = $title['value'];
       $scrollspy_build['#items'][] = array(
         '#markup' => '<a href="#paragraph-item-'.$paragraph->id().'">' . $title . '</a>',
+        '#wrapper_attributes' => array(),
+      );
+    }else {
+      $scrollspy_build['#items'][] = array(
+        '#markup' => '<a href="#paragraph-item-'.$paragraph->id().'">Empty</a>',
+        '#wrapper_attributes' => array(),
       );
     }
   }
@@ -240,7 +260,14 @@ function nine9_mobile_preprocess_commerce_product(&$variables) {
     $cover_image = $field_images[0]['#item']->entity->getFileUri();
     $image_url = ImageStyle::load('large')->buildUrl($cover_image);
     $variables['background'] = $image_url;
+    foreach ($variables['product']['field_images'] as $key => $value) {
+      if (!is_numeric($key)) {
+        unset($variables['product']['field_images'][$key]);
+      }
+    }
   }
+
+
 }
 
 function nine9_mobile_preprocess_views_view_field(&$variables) {

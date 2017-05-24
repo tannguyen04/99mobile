@@ -3,6 +3,7 @@ status: true
 dependencies:
   config:
     - field.field.paragraph.carousel.field_paragraph
+    - field.field.paragraph.carousel.field_text
     - paragraphs.paragraphs_type.carousel
   module:
     - entity_reference_revisions
@@ -19,5 +20,13 @@ content:
       view_mode: default
       link: ''
     third_party_settings: {  }
+    region: content
+  field_text:
+    weight: 5
+    label: above
+    settings:
+      link_to_entity: false
+    third_party_settings: {  }
+    type: string
     region: content
 hidden: {  }
