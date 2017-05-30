@@ -92,6 +92,7 @@
   <h1{{ title_attributes.addClass('node-service__title') }}>
     {{ label }}
   </h1>
+  <div class="clearfix">
   <div class="service__summary">
     <div class="service__content">
       {{ content.field_summary }}
@@ -100,8 +101,9 @@
       {{ content.field_number_integer }}
     </div>
   </div>
-  <div class="clearfix">
-  {{ content.body }}
   </div>
+  
+  {{ content.body }}
+
   {{ content.field_tags }}
 </article>
