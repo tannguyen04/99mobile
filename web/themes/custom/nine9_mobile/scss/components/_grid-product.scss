@@ -30,6 +30,10 @@
     }
   }
 
+  &__description {
+    min-height: 95px;
+  }
+
   &__content-top {
     img {
       display: block;
@@ -60,6 +64,7 @@
 
   &__short-info {
     font-size: 14px;
+    padding-top: 40px;
   }
 
   &__action-links {
@@ -90,7 +95,8 @@
     }
   }
 
-  &__price {
+  &__price,
+  .product__price-info .field__item {
     font-size: 25px;
     line-height: 27px;
     line-height: 1.6875rem;
@@ -192,7 +198,7 @@
   &--full {
     @extend %clearfix;
     margin-top: 0;
-    padding: 2.5rem 1.25rem 0;
+    padding: 0;
     position: relative;
     z-index: 15;
     overflow: hidden;
@@ -232,11 +238,15 @@
         background-color: #000;
         transition: .2s;
         opacity: 0;
+        visibility: hidden;
+        z-index: -1;
 
         &.is-active {
           top: 0;
           transition: .2s;
           opacity: 1;
+          z-index: 1;
+          visibility: visible;
         }
 
         .close {
@@ -294,27 +304,35 @@
           color: $white;
         }
 
-        label {
+        .field__label {
           font-size: 15px;
           margin-bottom: 5px;
         }
       }
 
-      &__atributes-colors {
+      &__attributes-colors {
         @extend %clearfix;
-        margin-bottom: 20px;
+        margin-bottom: 0;
 
         li {
           float: left;
           width: 37px !important;
           height: 37px !important;
+          margin-left: 0;
+          cursor: pointer;
         }
       }
 
       &__attributes-memory {
         display: inline-block;
         width: 100%;
-        margin-bottom: 20px;
+        margin-bottom: 0;
+
+        li {
+          float: left;
+          margin-left: 0;
+          margin-right: 10px;
+        }
 
         select {
           height: 30px;
@@ -355,6 +373,24 @@
       }
 
       &__variations {
+        .item-list {
+          display: flex;
+          align-items: center;
+          margin-bottom: 25px;
+
+          h3 {
+           font-size: 16px;
+           float: left;
+           margin-right: 10px; 
+           margin-bottom: 0;
+          }
+
+          li {
+            margin-bottom: 0;
+            line-height: 1;
+          }
+        }
+
         .product--rendered-attribute {
           legend {
             float: left;
@@ -385,7 +421,10 @@
 
         .paragraph__content {
           padding: 0;
-          margin: 0 -10px;
+        }
+
+        .field--name-field-paragraphs .paragraph__title {
+          padding-top: 40px;
         }
 
         h2.title {
@@ -393,6 +432,10 @@
           width: 100%;
           margin-top: 15px;
           font-size: 20px;
+        }
+
+        .content-inner {
+          padding: 0;
         }
       }
     }
@@ -459,6 +502,7 @@
 
 .info-links-list {
   @extend %clearfix;
+  margin-bottom: 0 !important;
 
   li {
     border-left: 1px solid #ffffff;
@@ -487,9 +531,12 @@
   box-shadow: 0 1px 5px 0 #d0d0d0 inset;
   color: #032b5a;
   display: block;
-  float: left;
   font-size: 0.875rem;
   height: auto;
   margin-right: 2.35765%;
   width: 100%;
+}
+
+.nine-mobile-product-select-attributes-form {
+
 }
