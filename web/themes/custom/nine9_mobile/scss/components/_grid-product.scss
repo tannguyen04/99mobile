@@ -323,10 +323,12 @@
         }
       }
 
-      &__attributes-memory {
+      &__attributes-memory,
+      .form-item-attribute-memory {
         display: inline-block;
         width: 100%;
         margin-bottom: 0;
+        color: $text-color;
 
         li {
           float: left;
@@ -389,6 +391,13 @@
             margin-bottom: 0;
             line-height: 1;
           }
+        }
+
+        .form-select {
+          height: 30px;
+          min-width: 70px;
+          color: $text-color;
+          box-sizing: border-box;
         }
 
         .product--rendered-attribute {

@@ -11,6 +11,7 @@ input[type='submit'] {
   margin-bottom: rem(15px);
   padding: rem(5px 15px);
   width: 100%;
+  box-sizing: border-box;
 
   &::-ms-clear {
     display: none;
