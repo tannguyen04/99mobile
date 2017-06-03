@@ -74,7 +74,6 @@ class NineMobileProductSelectAttributesForm extends FormBase {
       '#attributes' => array(
         'class' => array('product__attributes-colors')
       ),
-      '#title' => t('Color')
     );
     $form['attribute_color'] = array(
       '#title' => 'Color',
