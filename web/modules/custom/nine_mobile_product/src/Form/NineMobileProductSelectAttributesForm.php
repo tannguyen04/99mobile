@@ -112,7 +112,6 @@ class NineMobileProductSelectAttributesForm extends FormBase {
     //   '#title' => t('Memory'),
     // );
     $form['attribute_memory'] = array(
-      '#title' => 'Memory',
       '#type' => 'select',
       '#options' => $memory_options,
       '#default_value' => $product_variation_default['attribute_memory']['id'],
