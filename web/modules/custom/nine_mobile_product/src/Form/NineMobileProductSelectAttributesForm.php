@@ -102,14 +102,14 @@ class NineMobileProductSelectAttributesForm extends FormBase {
         );
       }
     }
-    // $form['attribute_memory_list'] = array(
-    //   '#theme' => 'item_list',
-    //   '#items' => $list_memory,
-    //   '#attributes' => array(
-    //     'class' => array('product__attributes-memory')
-    //   ),
-    //   '#title' => t('Memory'),
-    // );
+    $form['attribute_memory_list'] = array(
+      '#theme' => 'item_list',
+      '#items' => $list_memory,
+      '#attributes' => array(
+        'class' => array('product__attributes-memory')
+      ),
+      //'#title' => t('Memory'),
+    );
     $form['attribute_memory'] = array(
       '#type' => 'select',
       '#options' => $memory_options,
@@ -118,8 +118,8 @@ class NineMobileProductSelectAttributesForm extends FormBase {
         'callback' => '::ajaxCallback'
       ),
       '#validated' => TRUE,
-      // '#prefix' => '<div class="hidden">',
-      // '#suffix' => '</div>',
+      '#prefix' => '<div class="hidden">',
+      '#suffix' => '</div>',
     );
     return $form;
   }

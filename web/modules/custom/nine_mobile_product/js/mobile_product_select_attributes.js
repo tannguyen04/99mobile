@@ -15,12 +15,12 @@
         $('select[name="attribute_color"]').val(color_id).trigger('change');
       });
 
-      // $('.product__attributes-memory li').click(function(){
-      //   var memory_id = $(this).attr('data-memory-id');
-      //   $('.product__attributes-memory li').removeClass('active');
-      //   $(this).attr('class', 'active');
-      //   $('select[name="attribute_memory"]').val(memory_id).trigger('change');
-      // });
+      $('.product__attributes-memory li').click(function(){
+        var memory_id = $(this).attr('data-memory-id');
+        $('.product__attributes-memory li').removeClass('active');
+        $(this).attr('class', 'active');
+        $('select[name="attribute_memory"]').val(memory_id).trigger('change');
+      });
     }
   };
 
