@@ -122,7 +122,7 @@
 .main-menu {
 	display: flex;
 	position: relative;
-
+	z-index: 999;
 
   @include susy-media(mobileOnly) {
 		flex-direction: column;

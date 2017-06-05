@@ -24,6 +24,8 @@ body {
   // @include show-breakpoints;
   text-size-adjust: none;
   background-color: $gray-f8;
+  overflow-x: hidden;
+  overflow-y: auto;
 }
 
 
