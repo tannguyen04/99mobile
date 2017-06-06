@@ -21,7 +21,15 @@
                   <img src="{{ logo.src }}" alt="{{ logo.title }}" />
                 </a>
               </div>
-              {{ page.primary_menu }}
+              <div class="menu-button js-menu-button">
+                <span class="menu-button__item"></span>
+                <span class="menu-button__item"></span>
+                <span class="menu-button__item"></span>
+              </div>
+              <div id="main-menu">
+                {{ page.primary_menu.nine9_mobile_main_menu }}
+              </div>
+
             </div>
           </div>
         </div>

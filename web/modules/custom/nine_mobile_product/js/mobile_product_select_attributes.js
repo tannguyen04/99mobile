@@ -10,7 +10,7 @@
     attach: function (context, drupalSettings) {
       $('.product__attributes-colors li').click(function(){
         var color_id = $(this).attr('data-color-id');
-        $('.product__atributes-colors li').removeClass('active');
+        $('.product__attributes-colors li').removeClass('active');
         $(this).attr('class', 'active');
         $('select[name="attribute_color"]').val(color_id).trigger('change');
       });

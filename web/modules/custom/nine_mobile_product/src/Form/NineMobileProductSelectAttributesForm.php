@@ -63,10 +63,13 @@ class NineMobileProductSelectAttributesForm extends FormBase {
         '#wrapper_attributes' => array(
           'style' => 'background-color: '.$value['attribute_color']['hex'].'; width: 37px; height: 37px;',
           'data-color-id' => $value['attribute_color']['id'],
-          'class' => ($key == 0) ? 'active' : '',
         ),
         '#markup' => ''
       );
+    }
+    $color_ids = array_keys($list_color);
+    if (!empty($color_ids)) {
+      $list_color[$color_ids[0]]['#wrapper_attributes']['class'] = 'active';
     }
     $form['attribute_color_list'] = array(
       '#theme' => 'item_list',
@@ -96,11 +99,14 @@ class NineMobileProductSelectAttributesForm extends FormBase {
         $list_memory[$value['attribute_memory']['id']] = array(
           '#wrapper_attributes' => array(
             'data-memory-id' => $value['attribute_memory']['id'],
-            'class' => ($key == 0) ? 'active' : '',
           ),
           '#markup' => $value['attribute_memory']['name']
         );
       }
+    }
+    $memory_ids = array_keys($list_memory);
+    if (!empty($memory_ids)) {
+      $list_memory[$memory_ids[0]]['#wrapper_attributes']['class'] = 'active';
     }
     $form['attribute_memory_list'] = array(
       '#theme' => 'item_list',
