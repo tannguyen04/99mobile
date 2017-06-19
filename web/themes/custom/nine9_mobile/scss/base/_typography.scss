@@ -54,15 +54,15 @@ a {
 
   &:focus,
   &:visited {
-    color: $blue_dark;
+    color: darken($primary-color, 10%);
   }
 
   &:hover {
-    color: $blue_light;
+    color: darken($primary-color, 10%);
   }
 
   &:active {
-    color: $blue_light;
+    color: darken($primary-color, 10%);
   }
 }
 
