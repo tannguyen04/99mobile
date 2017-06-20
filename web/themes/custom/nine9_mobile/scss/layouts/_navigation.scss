@@ -125,7 +125,7 @@
 
   @include susy-media(mobileOnly) {
     flex-direction: column;
-    background-color: $white;
+    background-color: #010101;
   }
 
   @include susy-media(tablet) {
@@ -189,12 +189,12 @@
 
     @include susy-media(mobileOnly) {
       padding-right: 30px;
-      border-bottom: 1px solid #f0f0f0;
+      border-bottom: 1px solid #121212;
 
       &:after {
         display: inline-block;
         top: 33px;
-        background: white;
+        background: #010101;
         font-size: 20px;
         width: 30px;
       }
