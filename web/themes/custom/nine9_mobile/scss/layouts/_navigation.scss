@@ -21,7 +21,7 @@
 
     @include susy-media(tablet) {
       position: relative;
-      padding-left: rem(100px);
+      padding-left: rem(130px);
     }
   }
 }
@@ -31,8 +31,10 @@
     position: absolute;
     left: 0;
     top: 0;
-    padding: rem(24px 15px 24px 10px);
+    padding: rem(30px 0 20px 0);
   }
+
+  max-width: 110px;
 }
 
 %icon-submenu {
