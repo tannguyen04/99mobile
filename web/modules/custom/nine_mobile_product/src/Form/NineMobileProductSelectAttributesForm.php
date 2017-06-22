@@ -11,13 +11,44 @@ use Drupal\Core\Ajax\ReplaceCommand;
 use Drupal\Core\Ajax\AppendCommand;
 use Drupal\Core\Ajax\InvokeCommand;
 use Drupal\Core\Field\FieldItemListInterface;
+use CommerceGuys\Intl\Formatter\NumberFormatterInterface;
+use Drupal\commerce_price\NumberFormatterFactoryInterface;
+use Drupal\Core\Entity\EntityTypeManagerInterface;
+use Symfony\Component\DependencyInjection\ContainerInterface;
+
 /**
  * Class NineMobileProductSelectAttributesForm.
  *
  * @package Drupal\nine_mobile_product\Form
  */
 class NineMobileProductSelectAttributesForm extends FormBase {
+  /**
+   * The number formatter.
+   *
+   * @var \CommerceGuys\Intl\Formatter\NumberFormatterInterface
+   */
+  protected $numberFormatter;
 
+  /**
+   * Class constructor.
+   */
+  public function __construct(EntityTypeManagerInterface $entity_type_manager, NumberFormatterFactoryInterface $number_formatter_factory) {
+    $this->currencyStorage = $entity_type_manager->getStorage('commerce_currency');
+    $this->numberFormatter = $number_formatter_factory->createInstance();
+    $this->numberFormatter->setMaximumFractionDigits(6);
+    $this->numberFormatter->setMinimumFractionDigits(0);
+    //$this->numberFormatter->setCurrencyDisplay(NumberFormatterInterface::CURRENCY_DISPLAY_CODE);
+  }
+
+  /**
+   * {@inheritdoc}
+   */
+  public static function create(ContainerInterface $container) {
+    return new static(
+      $container->get('entity_type.manager'),
+      $container->get('commerce_price.number_formatter_factory')
+    );
+  }
 
   /**
    * {@inheritdoc}
@@ -34,9 +65,18 @@ class NineMobileProductSelectAttributesForm extends FormBase {
     $product_variation_ids = array();
     //Build array product variation with attributes
     $product_variations = array();
+    foreach ($items as $delta => $item) {
+      $product_variation = $item->entity;
+      $currency_codes[] = $product_variation->getPrice()->getCurrencyCode();
+    }
+    $currencies = $this->currencyStorage->loadMultiple($currency_codes);
+
     foreach ($items as $key => $item) {
       $product_variation = $item->entity;
+      $currency_code = $product_variation->getPrice()->getCurrencyCode();
+      $currency = $currencies[$currency_code];
       $color = $product_variation->getAttributeValue('attribute_color')->get('field_color')->first()->getValue();
+      $number = $product_variation->getPrice()->getNumber();
       $product_variations[] = array(
         'product_variant_id' => $product_variation->Id(),
         'attribute_color' => array(
@@ -48,7 +88,7 @@ class NineMobileProductSelectAttributesForm extends FormBase {
           'name' => $product_variation->getAttributeValue('attribute_memory')->label(),
           'id' => $product_variation->getAttributeValueId('attribute_memory'),
         ),
-        'price' => $product_variation->getPrice()->__toString(),
+        'price' => $this->numberFormatter->formatCurrency($number, $currency),
       );
     }
     //Set product variation in form stata
