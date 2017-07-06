@@ -9,11 +9,17 @@
 
 .techical-full {
   .row {
-    display: flex;
-    justify-content: space-between;
+    margin-bottom: 30px;
+
+    @include susy-media(tablet) {
+      display: flex;
+      justify-content: space-between;
+    }
 
     .col-sm-6 {
-      width: calc((100% - 30px) / 2);
+      @include susy-media(tablet) {
+        width: calc((100% - 30px) / 2);
+      }
     }
   }
 
@@ -22,5 +28,20 @@
     border-color: #3a97cd;
     color: #fff;
     z-index: 2;
+  }
+
+  li {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    display: block;
+    margin-bottom: -1px;
+    padding: 10px 15px;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+
+    label {
+      margin-right: 20px;
+    }
   }
 }
