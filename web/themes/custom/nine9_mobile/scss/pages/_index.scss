@@ -6,3 +6,21 @@
 .welcome-paragraph {
   padding: rem(40px 0);
 }
+
+.techical-full {
+  .row {
+    display: flex;
+    justify-content: space-between;
+
+    .col-sm-6 {
+      width: calc((100% - 30px) / 2);
+    }
+  }
+
+  .specificationheader {
+    background-color: #3a97cd;
+    border-color: #3a97cd;
+    color: #fff;
+    z-index: 2;
+  }
+}
