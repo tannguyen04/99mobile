@@ -1,0 +1,75 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  <div class="product product--full">
+    <div class="product__slide">
+      <div class="close js-close"><i class="fa fa-times"></i></div>
+      <div class="product__images__carousel">
+        {% for image in product.field_images %}
+          <div class="product__images__carousel__item">
+          {{ image }}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="container">
+      <div class="product__content-top">
+        <div class="product__images">
+          <div class="product__images__avatar">
+            {{ product.field_images.0 }}
+            <span class="gallery js-show-gallery">Gallary</span>
+          </div>
+        </div>
+        <div class="product__content-top__content">
+          <div class="product__short-info">
+            <h1>{{ product.title.0 }}</h1>
+            <div class="product__description">{{ product.field_description.0 }}</div>
+            <div class="product__price-info">
+              {{ product.variation_price }}
+            </div>
+          </div>
+          <div class="ping">Now in PRODUCT(RED).</div>
+          <div class="product__variations">
+            {{ product.variations }}
+          </div>
+          <div class="product__avaiable">
+            <p>In Stock Order by midnight for free next working day delivery</p>
+          </div>
+        </div>
+      </div>
+      <ul class="spec-items">
+        <li>Order now and collect in store. Or get free home delivery.</li>
+        <li>Get cash for your old device. Find out more about O2 Recycle.</li>
+        <li>Already an O2 customer? Sign in to upgrade.</li>
+        <li>Get the iPhone 7 on our business tariffs</li>
+      </ul>
+    </div>
+    <div class="product__detail">
+      <div class="bg-gray-shadow">
+        <div class="container">
+          {{ scrollspy_build }}
+        </div>
+      </div>
+      {{ product.field_paragraphs }}
+    </div>
+  </div>
+</article>

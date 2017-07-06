@@ -189,6 +189,9 @@ function nine9_mobile_preprocess_paragraph(&$variables) {
     if (!empty($modified['value']) && $modified['value'] != '1column') {
       $variables['attributes']['class'][] = 'grid--'. $modified['value'];
     }
+    if ($modified['value'] == '3column') {
+      $variables['attributes']['class'][] = 'grid--nopading';
+    }
   }
   if ($paragraph->bundle() == 'product_list') {
     $modified = $paragraph->get('field_product_list_style');

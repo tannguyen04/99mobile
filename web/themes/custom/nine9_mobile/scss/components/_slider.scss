@@ -95,3 +95,17 @@
 		}
 	}
 }
+
+.slider__item--dark {
+	.slider__heading,
+	.slider__text {
+		color: $white;
+	}
+}
+
+.slider__item--white {
+	.slider__heading,
+	.slider__text {
+		color: $black;
+	}
+}

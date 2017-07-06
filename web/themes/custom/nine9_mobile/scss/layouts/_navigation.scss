@@ -21,7 +21,7 @@
 
     @include susy-media(tablet) {
       position: relative;
-      padding-left: rem(130px);
+      padding-left: rem(160px);
     }
   }
 }
@@ -151,7 +151,7 @@
   }
 
   dt {
-    font-size: rem(24px);
+    font-size: rem(18px);
   }
 
   dd {
