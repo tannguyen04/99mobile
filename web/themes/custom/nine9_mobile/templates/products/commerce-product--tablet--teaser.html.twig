@@ -1,0 +1,54 @@
+{#
+/**
+ * @file
+ *
+ * Default product template.
+ *
+ * Available variables:
+ * - attributes: HTML attributes for the wrapper.
+ * - product: The rendered product fields.
+ *   Use 'product' to print them all, or print a subset such as
+ *   'product.title'. Use the following code to exclude the
+ *   printing of a given field:
+ *   @code
+ *   {{ product|without('title') }}
+ *   @endcode
+ * - product_entity: The product entity.
+ * - product_url: The product URL.
+ *
+ * @ingroup themeable
+ */
+#}
+<article{{ attributes }}>
+  <div class="product product--teaser">
+    <a href="{{ product_url }}">
+      {% if (product.field_condition_availability[0]['#plain_text'] == 'New') %}
+      <div class="product__status">
+        <span>{{ product.field_condition_availability.0 }}</span>
+      </div>
+      {% endif %}
+      <div class="product__content-top">
+        {{ product.field_images.0 }}
+        <div class="product__rating">
+          <div class="star-rating" >★★★★★
+            <div class="star-rating__stars">★★★★★</div>
+          </div>
+          <div class="product__color">
+              {{ product.variations }}
+          </div>
+        </div>
+        <h2 class="product__title">{{ product.title.0 }}</h2>
+        <div class="product__short-info">
+          {{ product.field_description.0 }}
+        </div>
+        <div class="product__price-info">
+          Chỉ từ
+          <div class="product__price">{{ product.variation_price }}</div>
+        </div>
+      </div>
+    </a>
+    <div class="product__action-links">
+      <a href="{{ product_url }}">Read more</a>
+    </div>
+  </div>
+</article>
