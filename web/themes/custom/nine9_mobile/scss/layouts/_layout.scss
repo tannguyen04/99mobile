@@ -59,24 +59,6 @@ body {
         float: left;
         width: 25%;
       }
-
-      &:before {
-        @include susy-media(tablet) {
-          position: absolute;
-          background: url('../images/footer-list-splitter.png') no-repeat scroll 0 0 transparent;
-          width: 1px;
-          height: 160px;
-          top: 0;
-          right: 0;
-          content: '';
-        }
-      }
-
-      &:last-child {
-        &:before {
-          display: none;
-        }
-      }
     }
 
     ul {
@@ -113,7 +95,7 @@ body {
   }
 
   &__bottom {
-    border-top: 1px solid  $gray-e3;
+    border-top: 1px solid  #3D3D3D;
     padding: 0;
     padding-top: 25px;
 
