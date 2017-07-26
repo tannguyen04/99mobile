@@ -32,8 +32,7 @@ body {
 .site-footer {
   background: #1A1A1A;
   color: #999999;
-  font-size: 12px;
-  font-weight: bold;
+  font-size: 13px;
   padding: 30px 0 20px;
 
   a {
@@ -46,9 +45,13 @@ body {
     }
   }
 
+  .field--type-text-with-summary {
+    line-height: 2.5;
+  }
+
   &__top {
     .region {
-      padding: 0 20px 20px;
+      padding: 0 20px 0;
       position: relative;
 
       @include susy-media(tablet) {
@@ -79,7 +82,8 @@ body {
       margin: 0;
 
       li {
-        font-weight: bold;
+        margin-bottom: 15px;
+        padding: 0;
 
         a {
           &:hover {
@@ -98,6 +102,8 @@ body {
     h2 {
       font-size: 18px;
       color: #fff;
+      margin-bottom: 15px;
+      text-transform: uppercase;
     }
 
     h6 {
@@ -106,7 +112,9 @@ body {
   }
 
   &__bottom {
+    border-top: 1px solid  $gray-e3;
     padding: 0 20px;
+    padding-top: 30px;
 
     .field--name-field-text {
       float: left;
