@@ -47,11 +47,12 @@ body {
 
   .field--type-text-with-summary {
     line-height: 2.5;
+    margin-bottom: 15px;
   }
 
   &__top {
     .region {
-      padding: 0 20px 0;
+      padding: 0;
       position: relative;
 
       @include susy-media(tablet) {
@@ -112,9 +113,9 @@ body {
   }
 
   &__bottom {
-    // border-top: 1px solid  $gray-e3;
-    padding: 0 20px;
-    padding-top: 30px;
+    border-top: 1px solid  $gray-e3;
+    padding: 0;
+    padding-top: 25px;
 
     .field--name-field-text {
       float: left;
@@ -143,7 +144,7 @@ body {
     margin: 0;
 
     li {
-      border-right: 2px solid $gray-e3;
+      // border-right: 2px solid $gray-e3;
       float: left;
       line-height: 1;
       margin-right: 10px;
