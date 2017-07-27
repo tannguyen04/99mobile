@@ -37,7 +37,7 @@
   &__content-top {
     img {
       display: block;
-      margin: 0 auto 25px auto;
+      margin: 20px auto 25px auto;
     }
   }
 
@@ -65,7 +65,7 @@
   &__short-info {
     font-size: 14px;
     padding-top: 40px;
-    
+
     @include susy-media(desktop) {
       min-height: 290px;
     }
@@ -140,7 +140,7 @@
       color: #ffcc00;
       overflow: hidden;
     }
-    
+
   }
 
   &__color {
@@ -212,7 +212,7 @@
       top: 0;
       left: 0;
       right: 0;
-      background-color: #147ab4;
+      background-color: $gray-3;
       background-image: -moz-linear-gradient(center top , #102753, #147ab4);
       height: 280px;
       content: '';
@@ -224,7 +224,7 @@
       }
     }
 
-    
+
     .product {
       &__short-info {
         p {
@@ -423,7 +423,7 @@
           h3 {
            font-size: 16px;
            float: left;
-           margin-right: 10px; 
+           margin-right: 10px;
            margin-bottom: 0;
           }
 
