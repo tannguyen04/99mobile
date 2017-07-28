@@ -117,6 +117,7 @@ function nine9_mobile_preprocess_field(&$variables, $hook) {
       }
     }
   }
+
 }
 
 /**
@@ -183,15 +184,15 @@ function nine9_mobile_preprocess_page(&$variables) {
 function nine9_mobile_preprocess_paragraph(&$variables) {
   $paragraph = $variables['paragraph'];
   $variables['attributes']['data-id'] = 'paragraph-item-'.$paragraph->id();
-  if ($paragraph->bundle() == 'promotion') {
+  if ($paragraph->bundle() == 'promotion' || $paragraph->bundle() == 'item_list') {
     $modified = $paragraph->get('field_promote_styling');
     $modified = $modified->first()->getValue();
     if (!empty($modified['value']) && $modified['value'] != '1column') {
       $variables['attributes']['class'][] = 'grid--'. $modified['value'];
     }
-    if ($modified['value'] == '3column') {
-      $variables['attributes']['class'][] = 'grid--nopading';
-    }
+    // if ($modified['value'] == '3column') {
+    //   $variables['attributes']['class'][] = 'grid--nopading';
+    // }
   }
   if ($paragraph->bundle() == 'product_list') {
     $modified = $paragraph->get('field_product_list_style');

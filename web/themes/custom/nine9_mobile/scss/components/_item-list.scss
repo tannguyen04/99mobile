@@ -1,0 +1,17 @@
+.paragraph--item-list {
+  .item {
+    padding: 15px;
+    border: 1px solid #e1e8ed;
+    border-radius: 4px;
+    &__image {
+      margin-bottom: 10px;
+    }
+    &__summary {
+      font-size: 0.875rem;
+    }
+    h4 a {
+      color: $black;
+      font-weight: 700;
+    }
+  }
+}
