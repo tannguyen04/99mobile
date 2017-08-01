@@ -56,8 +56,6 @@ class NineMobileProductVariantFieldFormatter extends FormatterBase {
     $elements = [];
     foreach ($items as $delta => $item) {
       $elements[$delta] = ['#markup' => $this->viewValue($item)];
-      // kint($item->entity);
-      // die;
     }
     $form = \Drupal::formBuilder()->getForm('Drupal\nine_mobile_product\Form\NineMobileProductSelectAttributesForm', $items);
     return $form;
