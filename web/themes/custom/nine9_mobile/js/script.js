@@ -12,7 +12,7 @@
       mobileLandscape = "(min-width:30em)", // 480px.
       tablet = "(min-width:48em)"; // 768px.
       // Add  functionality here.
-      $('.slider').slick({
+      $('.slider').not('.slick-initialized').slick({
         // slidesToShow: 3,
         // slidesToScroll: 1,
         // responsive: [
@@ -56,7 +56,7 @@
 
   Drupal.behaviors.slideImage = {
     attach: function (context, settings) {
-      $('.product__images__carousel').slick({
+      $('.product__images__carousel').not('.slick-initialized').slick({
         infinite: true,
         dots: true,
         slidesToShow: 3,
@@ -95,11 +95,11 @@
   Drupal.behaviors.showGallery = {
     attach: function (context, settings) {
       $('.js-show-gallery').on('touchstart click', function (e) {
-        $('.product__slide').toggleClass('is-active');
+        $('.product__slide').addClass('is-active');
       });
 
       $('.js-close i').on('touchstart click', function (e) {
-        $('.product__slide').toggleClass('is-active');
+        $('.product__slide').removeClass('is-active');
       });
     }
   };

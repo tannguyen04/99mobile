@@ -5,7 +5,7 @@
   "dependencies": {
     "susy": "~2.2.6",
     "bower.json": "~0.6.9",
-    "slick-carousel": "^1.6.0"
+    "slick-carousel": "^1.7.1"
   },
   "ignore": [
     "**/.*",
