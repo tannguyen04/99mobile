@@ -76,7 +76,7 @@
   @include susy-media(tablet) {
     position: absolute;
     left: 0;
-    width: 180px;
+    min-width: 180px;
 
     .sub-menu {
       left: 100%;
