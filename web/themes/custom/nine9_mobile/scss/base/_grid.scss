@@ -81,7 +81,7 @@ $susy-media: (
 
   // min-width: 1999px
   desktop: em($desktop) * 1em,
-  
+
   // min-width: 1999px
   desktop-wide: em($desktop-wide) * 1em,
 );
@@ -109,14 +109,15 @@ $susy-media: (
   .container {
     max-width: 100%;
     margin-left: 0;
-    margin-right: 0; 
+    margin-right: 0;
   }
 }
 
-.grid__item { 
+.grid__item {
   @include susy-media(tablet) {
-    padding: 10px;
+
   }
+  padding: 10px;
 }
 
 .grid {
@@ -125,7 +126,7 @@ $susy-media: (
     .grid {
       &__item {
         @include susy-media(tablet) {
-          padding: 0;
+          //padding: 0;
         }
       }
     }
@@ -145,7 +146,7 @@ $susy-media: (
 @for $i from 1 through 6 {
 
   .grid--#{$i}column {
-    
+
     .paragraph__content {
       @include susy-media(tablet) {
         display: flex;

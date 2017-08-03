@@ -65,6 +65,9 @@
   &__short-info {
     font-size: 14px;
     padding-top: 40px;
+    p {
+      color: $blue-02;
+    }
 
     @include susy-media(desktop) {
       min-height: 290px;
@@ -191,7 +194,7 @@
   &__title {
     margin: 0 0 10px 0;
     clear: both;
-    color: $primary-color;
+    color: $blue-02;
     font-size: 22px;
     font-size: 1.375rem;
     overflow: hidden;
@@ -230,6 +233,7 @@
         p {
           margin-bottom: 30px;
           min-height: 60px;
+          color: $white;
         }
       }
 

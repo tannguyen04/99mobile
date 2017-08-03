@@ -19,6 +19,9 @@
 	}
 
 	&__content {
-		padding: rem(16px 30px);
+		padding: rem(10px 0px);
+	}
+	@media (min-width: $tablet) {
+		padding: rem(15px 15px);
 	}
 }
