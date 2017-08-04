@@ -336,7 +336,10 @@
           &.active:before {
             border-left: 7px solid transparent;
             border-right: 7px solid transparent;
-            border-top: 7px solid #fff;
+            border-top: 7px solid $blue-02;
+            @include susy-media(tablet) {
+              border-top: 7px solid $white;
+            }
             content: "";
             height: 0;
             left: 50%;
@@ -592,6 +595,6 @@
   width: 100%;
 }
 
-.nine-mobile-product-select-attributes-form {
-
+.product__images__carousel {
+  padding-bottom: 40px;
 }
