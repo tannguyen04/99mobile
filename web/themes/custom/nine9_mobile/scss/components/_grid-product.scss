@@ -233,7 +233,9 @@
         p {
           margin-bottom: 30px;
           min-height: 60px;
-          color: $white;
+          @include susy-media(tablet) {
+            color: $white;
+          }
         }
       }
 
