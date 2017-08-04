@@ -115,9 +115,9 @@ $susy-media: (
 
 .grid__item {
   @include susy-media(tablet) {
-
+    padding: 10px;
   }
-  padding: 10px;
+  padding-bottom: 10px;
 }
 
 .grid {

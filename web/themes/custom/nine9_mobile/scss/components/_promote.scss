@@ -27,8 +27,11 @@
 	}
 
 	&__heading {
-		font-size: 1.75rem;
+		font-size: 1.2rem;
 		color: $blue_slider;
+		@include susy-media(tablet) {
+  		font-size: 1.75rem;
+  	}
 	}
 
 	&__text {
@@ -86,7 +89,6 @@
 
 	.promote {
 		&__heading {
-			font-size: 1.75rem;
 			color: $white;
 		}
 

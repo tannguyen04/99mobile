@@ -8,11 +8,17 @@
 	}
 
 	h1 {
-		font-size: rem(46px);
+		font-size: rem(26px);
+		@include susy-media(tablet) {
+  		font-size: rem(46px);
+  	}
 	}
+
 
 	p {
 		font-style: italic;
-		font-size: rem(18px);
+		@include susy-media(tablet) {
+  		font-size: rem(18px);
+  	}
 	}
 }
