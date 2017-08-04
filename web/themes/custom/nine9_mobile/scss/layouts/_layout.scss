@@ -28,6 +28,9 @@ body {
   overflow-y: auto;
 }
 
+#page-wrapper {
+  overflow-x: hidden;
+}
 
 .site-footer {
   background: #1A1A1A;
